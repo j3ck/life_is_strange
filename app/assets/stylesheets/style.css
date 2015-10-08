@@ -1445,7 +1445,7 @@ a.btn-mod:focus{
 	margin-right: 20px;
 }
 .nav-logo-wrap .logo{
-	display: table-cell;
+	/*display: table-cell;*/
 	vertical-align: middle;
 	max-width: 118px;
     height: 75px;
