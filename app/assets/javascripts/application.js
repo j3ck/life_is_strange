@@ -10,4 +10,24 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require_tree .
+//= require jquery-1.11.2.min
+//= require jquery.easing.1.3
+//= require bootstrap.min
+//= require SmoothScroll
+//= require jquery.scrollTo.min
+//= require jquery.localScroll.min
+//= require jquery.viewport.mini
+//= require jquery.countTo
+//= require jquery.appear
+//= require jquery.sticky
+//= require jquery.parallax-1.1.3
+//= require jquery.fitvids
+//= require owl.carousel.min
+//= require isotope.pkgd.min
+//= require imagesloaded.pkgd.min
+//= require jquery.magnific-popup.min
+
+//= require wow.min
+//= require masonry.pkgd.min
+//= require jquery.simple-text-rotator.min
+//= require all
