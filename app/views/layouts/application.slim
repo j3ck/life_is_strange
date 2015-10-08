@@ -7,13 +7,20 @@ html
       meta name="viewport" content="width=device-width, initial-scale=1.0"
       title
         | Life is Strange
+
       = csrf_meta_tags
 
+      / CSS
       = stylesheet_link_tag "application", :media => "all"
-      / = favicon_link_tag 'favicon.ico', :rel => 'shortcut icon'
-      = javascript_include_tag "application"
 
-    body
+
+
+      / = favicon_link_tag 'favicon.ico', :rel => 'shortcut icon'
+
+    body.appear-animate
       = render './partials/header'
       = yield
       = render './partials/footer'
+
+      / Js
+      = javascript_include_tag "application"
