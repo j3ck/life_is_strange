@@ -11,6 +11,7 @@ html
       = csrf_meta_tags
 
       / CSS
+      = stylesheet_link_tag '//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'
       = stylesheet_link_tag "application", :media => "all"
 
 
@@ -18,9 +19,10 @@ html
       / = favicon_link_tag 'favicon.ico', :rel => 'shortcut icon'
 
     body.appear-animate
-      = render './partials/header'
-      = yield
-      = render './partials/footer'
+      div.page#top
+        = render './partials/header'
+        = yield
+        = render './partials/footer'
 
       / Js
       = javascript_include_tag "application"
