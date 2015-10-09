@@ -13,3 +13,27 @@ development:
 test:
   <<: *default
   database: name_test
+
+# or for postgresql
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: 5
+
+development:
+  <<: *default
+  database: name_development
+
+test:
+  <<: *default
+  database: name_test
+
+
+production:
+  <<: *default
+  database: name_production
+  username: username
+  password: <%= ENV['DATABASE_PASSWORD'] %>
