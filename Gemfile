@@ -31,11 +31,11 @@ gem 'rails_admin', '0.6.5'
 # gem 'rails_admin_flatly_theme', github: 'konjoot/rails_admin_flatly_theme'
 
 # ORM
-gem 'mysql2', '~> 0.3.18'
+# gem 'mysql2', '~> 0.3.18'
 gem 'seed_dump'
 gem 'ar-octopus'
 gem 'redis'
-# gem 'pg'
+gem 'pg'
 
 # Forms
 gem 'simple_form'
