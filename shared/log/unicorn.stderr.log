@@ -1,0 +1,7 @@
+127.0.0.1 - - [09/Oct/2015:19:21:01 +0300] "GET / HTTP/1.0" 500 - 0.1373
+127.0.0.1 - - [09/Oct/2015:19:21:01 +0300] "POST /__better_errors/ef7d39d8a98c26c9/variables HTTP/1.0" 500 47130 0.0708
+127.0.0.1 - - [09/Oct/2015:19:21:12 +0300] "GET / HTTP/1.0" 500 - 0.0498
+127.0.0.1 - - [09/Oct/2015:19:21:12 +0300] "POST /__better_errors/f8525eb8a262e6cc/variables HTTP/1.0" 500 47130 0.0509
+I, [2015-10-09T19:21:18.728699 #8707]  INFO -- : reaped #<Process::Status: pid 8720 exit 0> worker=0
+I, [2015-10-09T19:21:18.728812 #8707]  INFO -- : reaped #<Process::Status: pid 8723 exit 0> worker=1
+I, [2015-10-09T19:21:18.729038 #8707]  INFO -- : master complete
