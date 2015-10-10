@@ -10,4 +10,37 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require_tree .
+//= require pace.min
+//= require jquery-1.11.1.min
+//= require modernizr.custom
+//= require jquery-ui.min
+//= require bootstrap.min
+//= require jquery-easy
+//= require jquery.unveil.min
+//= require jquery.bez.min
+//= require jquery.ioslist.min
+//= require jquery.actual.min
+//= require jquery.scrollbar.min
+//= require select2.min
+//= require classie
+//= require switchery.min
+//= require d3.v3
+//= require nv.d3.min
+//= require utils
+//= require tooltip
+//= require interactiveLayer
+//= require axis
+//= require line
+//= require lineWithFocusChart
+//= require hammer
+//= require jquery.mousewheel
+//= require mapplic
+//= require rickshaw.min
+//= require MetroJs.min
+//= require jquery.sparkline.min
+//= require skycons
+//= require bootstrap-datepicker
+//= require pages.min
+//= require dashboard
+//= require scripts
+//= require theme_switcher
