@@ -1,19 +1,18 @@
-<div class="login-wrapper ">
-  <div class="bg-pic">
-    <img src="http://pages.revox.io/dashboard/latest/html/assets/img/demo/new-york-city-buildings-sunrise-morning-hd-wallpaper.jpg" data-src="http://pages.revox.io/dashboard/latest/html/assets/img/demo/new-york-city-buildings-sunrise-morning-hd-wallpaper.jpg" data-src-retina="http://pages.revox.io/dashboard/latest/html/assets/img/demo/new-york-city-buildings-sunrise-morning-hd-wallpaper.jpg" alt="" class="lazy">
-    <div class="bg-caption pull-bottom sm-pull-bottom text-white p-l-20 m-b-20">
-      <h2 class="semi-bold text-white">
-        | Pages make it easy to enjoy what matters the most in the life</h2>
-      <p class="small">
+div.login-wrapper
+  div.bg-pic
+    img.lazy src="himg/back.jpg" data-src="img/back.jpg" data-src-retina="img/back.jpg" alt=""
+    div.bg-caption.pull-bottom.sm-pull-bottom.text-white.p-l-20.m-b-20
+      h2.semi-bold.text-white
+        | Pages make it easy to enjoy what matters the most in the life
+      p.small
         | images Displayed are solely for representation purposes only, All work copyright of respective owner, otherwise © 2013-2014 REVOX.
-      </p>
-    </div>
-  </div>
 
-  <div class="login-container bg-white">
-    <div class="p-l-50 m-l-20 p-r-50 m-r-20 p-t-50 m-t-30 sm-p-l-15 sm-p-r-15 sm-p-t-40">
-      <p class="p-t-35">Sign into your pages account</p>
-    </div>
-  </div>
-</div>
-<img id="hzDownscaled" style="position: absolute; top: -10000px;">
+  div.login-container.bg-white
+    div.p-l-50.m-l-20.p-r-50.m-r-20.p-t-50.m-t-30.sm-p-l-15.sm-p-r-15.sm-p-t-40
+      p.p-t-35
+        | Авторизация:
+
+    div.p-l-50.m-l-20.p-r-50.m-r-20.p-t-50.m-t-30.sm-p-l-15.sm-p-r-15.sm-p-t-40
+      = link_to '/auth/twitter', class: 'center btn btn-block btn-social btn-twitter' do
+        i.fa.fa-twitter
+        = " Войти через Twitter"
