@@ -10,6 +10,19 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require pace-theme-flash
+ *= require bootstrap.min
+
+ *= require jquery.scrollbar
+ *= require select2
+ *= require switchery.min
+ *= require nv.d3.min
+ *= require mapplic
+ *= require rickshaw.min
+ *= require datepicker3
+ *= require MetroJs
+ *= require pages-icons
+ *= require pages
  *= require_tree .
  *= require_self
  */
