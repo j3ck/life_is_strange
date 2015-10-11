@@ -3,7 +3,7 @@ class TimersController < ApplicationController
   before_action :auth
 
   def index
-    # raise current_user.inspect
+    raise current_user.inspect
   end
 
   private
