@@ -16,7 +16,7 @@ html
 
       = favicon_link_tag 'favicon.ico', :rel => 'shortcut icon'
 
-  body.fixed-header.sidebar-visible.menu-pin
+  body
     = render './partials/header'
     = yield
     = render './partials/footer'

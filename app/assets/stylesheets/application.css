@@ -18,3 +18,10 @@
  *= require_tree .
  *= require_self
  */
+
+body{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.57)), url(http://i4.minus.com/ibkeCImQ7xcsmD.jpg);
+ 	background-attachment: fixed;
+ 	background-size: auto, cover;
+ 	background-position-x: center;
+}
