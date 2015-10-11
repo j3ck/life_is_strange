@@ -1,96 +1,52 @@
-<div id="page-container" class="sidebar-l sidebar-mini sidebar-o side-scroll header-navbar-fixed header-navbar-transparent header-navbar-scroll">
-  <nav id="sidebar">
-    <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 589px;">
-      <div id="sidebar-scroll" style="overflow: hidden; width: auto; height: 589px;">
-        <div class="sidebar-content">
-          <div class="side-header side-content">
-            <button class="btn btn-link text-gray pull-right visible-xs visible-sm" type="button" data-toggle="layout" data-action="sidebar_close">
-              <i class="fa fa-times"></i>
-            </button>
-            <a class="h5 text-white" href="/">
-              <i class="fa fa-send text-primary"></i>
-              <span class="h4 font-w600 sidebar-mini-hide"> Life is strange</span>
-            </a>
-          </div>
-          <div class="side-content">
-            <ul class="nav-main">
-              <li class="open">
-                <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-home"></i><span class="sidebar-mini-hide">Home</span></a>
-                <ul>
-                  <li>
-                    <a class="active" href="frontend_home.php">Default Navigation</a>
-                  </li>
-                  <li>
-                    <a href="frontend_home_header_nav.php">Header Navigation</a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a href="frontend_features.php"><i class="si si-energy"></i><span class="sidebar-mini-hide">Features</span></a>
-              </li>
-              <li>
-                <a href="frontend_pricing.php"><i class="si si-wallet"></i><span class="sidebar-mini-hide">Pricing</span></a>
-              </li>
-              <li>
-                <a href="frontend_contact.php"><i class="si si-envelope-open"></i><span class="sidebar-mini-hide">Contact</span></a>
-              </li>
-              <li>
-                <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-book-open"></i><span class="sidebar-mini-hide">Pages</span></a>
-                <ul>
-                  <li>
-                    <a href="frontend_team.php">Team</a>
-                  </li>
-                  <li>
-                    <a href="frontend_support.php">Support</a>
-                  </li>
-                  <li>
-                    <a href="frontend_search.php">Search</a>
-                  </li>
-                  <li>
-                    <a href="frontend_about.php">About</a>
-                  </li>
-                  <li>
-                    <a href="frontend_login.php">Log In</a>
-                  </li>
-                  <li>
-                    <a href="frontend_signup.php">Sign Up</a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-pencil"></i><span class="sidebar-mini-hide">Blog</span></a>
-                <ul>
-                  <li>
-                    <a href="frontend_blog_classic.php">Classic</a>
-                  </li>
-                  <li>
-                    <a href="frontend_blog_list.php">List</a>
-                  </li>
-                  <li>
-                    <a href="frontend_blog_grid.php">Grid</a>
-                  </li>
-                  <li>
-                    <a href="frontend_blog_story.php">Story</a>
-                  </li>
-                  <li>
-                    <a href="frontend_blog_story_cover.php">Story Cover</a>
-                  </li>
-                </ul>
-              </li>
-              <li class="nav-main-heading">
-                <span class="sidebar-mini-hide">Apps</span>
-              </li>
-              <li>
-                <a href="index.php"><i class="si si-speedometer"></i><span class="sidebar-mini-hide">Backend</span></a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
+div#page-container.sidebar-l.sidebar-mini.sidebar-o.side-scroll.header-navbar-fixed.header-navbar-transparent.header-navbar-scroll
+  nav#sidebar
+    div.slimScrollDiv style="position: relative; overflow: hidden; width: auto; height: 589px;"
+      div#sidebar-scroll style="overflow: hidden; width: auto; height: 589px;"
+        div.sidebar-content
+          div.side-header.side-content
+            a.h5.text-white href="/"
+              i.fa.fa-send.text-primary
+              span.h4.font-w600.sidebar-mini-hide
+                = " Life is strange"
+
+          div.side-content
+            ul.nav-main
+              li
+                a href="#"
+                  i.si.si-home
+                  span.sidebar-mini-hide
+                    | Главная
+              li
+                a href="#"
+                  i.si.si-pencil
+                  span.sidebar-mini-hide
+                    | Наш блог
+              li
+                a href="#"
+                  i.si.si-envelope-open
+                  span.sidebar-mini-hide
+                    | Контакты
+              li.nav-main-heading
+                span.sidebar-mini-hide
+                  | Наш портал
+              li
+                a href="#"
+                  i.si.si-speedometer
+                  span.sidebar-mini-hide
+                    | Войти
+
       <div class="slimScrollBar" style="width: 5px; position: absolute; top: 0px; opacity: 0.35; display: none; border-radius: 7px; z-index: 99; right: 2px; height: 882px; background: rgb(255, 255, 255);"></div>
       <div class="slimScrollRail" style="width: 5px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; opacity: 1; z-index: 90; right: 2px; background: rgb(51, 51, 51);"></div>
-    </div>
-  </nav>
+
+
+
+
+
+
+
+
+
+
   <header id="header-navbar" class="content-mini content-mini-full hidden-md hidden-lg">
     <div class="content-boxed">
       <ul class="nav-header pull-right">
@@ -423,4 +379,3 @@
       </div>
     </div>
   </footer>
-</div>
