@@ -10,18 +10,10 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require styles
- *= require bootstrap
- *= require core
- *= require components
- *= require colors
+ *= require slick.min
+ *= require slick-theme.min
+ *= require bootstrap.min-1.2
+ *= require oneui.min-1.2
  *= require_tree .
  *= require_self
  */
-
-body{
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.57)), url(/back.jpg);
- 	background-attachment: fixed;
- 	background-size: auto, cover;
- 	background-position-x: center;
-}
