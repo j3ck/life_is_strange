@@ -11,27 +11,18 @@
 // about supported directives.
 //
 //= require pace.min
-//= require pace.min
-//= require pace.min
-//= require pace.min
-//= require pace.min
-//= require pace.min
-//= require pace.min
-//= require pace.min
-//= require pace.min
-//= require pace.min
-//= require pace.min
-//= require pace.min
-//= require pace.min
-//= require pace.min
-//= require pace.min
-//= require pace.min
-//= require pace.min
-//= require pace.min
-//= require pace.min
-//= require pace.min
-//= require pace.min
-//= require pace.min
-//= require pace.min
-//= require pace.min
-//= require pace.min
+//= require jquery.min
+//= require bootstrap.min
+//= require blockui.min
+//= require nicescroll.min
+//= require drilldown
+
+//= require d3.min
+//= require d3_tooltip
+//= require switchery.min
+//= require uniform.min
+//= require bootstrap_multiselect
+//= require moment.min
+//= require daterangepicker
+//= require app
+//= require dashboard
