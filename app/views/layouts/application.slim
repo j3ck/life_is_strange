@@ -20,15 +20,10 @@ html
     - if params[:controller] == 'main'
       body.fixed-header
         = yield
-        /= render './partials/footer'
-
-        / Js
         = javascript_include_tag "application"
     - else
       body.fixed-header.sidebar-visible.menu-pin
         = render './partials/header'
         = yield
-        /= render './partials/footer'
-
-        / Js
+        = render './partials/footer'
         = javascript_include_tag "application"
