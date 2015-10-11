@@ -10,19 +10,7 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require pace.min
-//= require jquery.min
-//= require bootstrap.min
-//= require blockui.min
-//= require nicescroll.min
-//= require drilldown
-
-//= require d3.min
-//= require d3_tooltip
-//= require switchery.min
-//= require uniform.min
-//= require bootstrap_multiselect
-//= require moment.min
-//= require daterangepicker
-//= require app
-//= require dashboard
+//= require oneui.min-1.2
+//= require slick.min
+//= require Chart.min
+//= require base_pages_dashboard
