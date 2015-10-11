@@ -20,7 +20,7 @@
  */
 
 body{
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.57)), url(http://i4.minus.com/ibkeCImQ7xcsmD.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.57)), url(/back.jpg);
  	background-attachment: fixed;
  	background-size: auto, cover;
  	background-position-x: center;
