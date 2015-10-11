@@ -171,7 +171,6 @@ div#page-container.sidebar-l.sidebar-mini.sidebar-o.side-scroll.header-navbar-fi
           div.col-sm-4
             div.h1.push-5 data-toggle="countTo" data-to="#{User.all.count}" data-after="+"
               = User.all.count
-              | +
             div.font-w600.text-uppercase.text-muted
               | Членов сообщества
           div.col-sm-4
@@ -208,7 +207,10 @@ div#page-container.sidebar-l.sidebar-mini.sidebar-o.side-scroll.header-navbar-fi
               h4.h3.font-w300.push-10
                 | Открытый репозиторий
               p
-                | Исходики проекта находятся в открытом доступе для всех желающих внести свой вклад.
+                = "Исходики проекта находятся "
+                = link_to 'https://github.com/riley-usagi/life_is_strange' do
+                  = " в открытом доступе, "
+                = "для всех желающих внести свой вклад."
               p
                 | Система разрабатывается на основе языка Ruby (с использованием фреймворка Ruby On Rails)
 
