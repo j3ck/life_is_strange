@@ -11,7 +11,8 @@
       <a href="#quickview-chat" data-toggle="tab" aria-expanded="true">Chat</a>
     </li>
   </ul>
-  <a class="btn-link quickview-toggle" data-toggle-element="#quickview" data-toggle="quickview"><i class="pg-close"></i></a>
+  a.btn-link.quickview-toggle data-toggle-element="#quickview" data-toggle="quickview"
+    i.fa.fa-close
 
   <div class="tab-content">
 
@@ -53,16 +54,6 @@
               </div>
 
             </li>
-
-
-
-
-
-
-
-
-
-
           </ul>
         </div>
 
@@ -102,13 +93,9 @@
           <div class="navbar navbar-default navbar-sm">
             <div class="navbar-inner">
 
-
-
               <div class="view-heading">
-                Notications
+                | Notications
               </div>
-
-
 
             </div>
           </div>
@@ -116,7 +103,7 @@
 
           <div data-init-list-view="ioslist" class="list-view boreded no-top-border">
             <h2 class="list-view-fake-header">
-              Sever Status
+              | Sever Status
             </h2>
 
             <div class="scroll-wrapper list-view-wrapper" style="position: absolute;">
@@ -124,7 +111,7 @@
                 <div class="list-view-group-container">
 
                   <div class="list-view-group-header text-uppercase">
-                    Calendar
+                    | Calendar
                   </div>
 
                   <ul>
@@ -186,7 +173,7 @@
                           <span class="text-master link">Jame Smith commented on your status
                             <br>
                           </span>
-                          <span class="text-master">“Perfection Simplified - Company Revox"</span>
+                          <span class="text-master">'Perfection Simplified - Company Revox'</span>
                         </p>
                       </a>
 
@@ -203,7 +190,7 @@
                           <span class="text-master link">Jame Smith commented on your status
                             <br>
                           </span>
-                          <span class="text-master">“Perfection Simplified - Company Revox"</span>
+                          <span class="text-master">'Perfection Simplified - Company Revox'</span>
                         </p>
                       </a>
 
@@ -392,41 +379,41 @@
 
             <div class="message clearfix">
               <div class="chat-bubble from-me">
-                Hello there
+                | Hello there
               </div>
             </div>
 
 
             <div class="message clearfix">
               <div class="profile-img-wrapper m-t-5 inline">
-                <img class="col-top" width="30" height="30" src="assets/img/profiles/avatar_small.jpg" alt="" data-src="assets/img/profiles/avatar_small.jpg" data-src-retina="assets/img/profiles/avatar_small2x.jpg">
+                = image_tag current_user.photo_url
               </div>
               <div class="chat-bubble from-them">
-                Hey
+                | Hey
               </div>
             </div>
 
 
             <div class="message clearfix">
               <div class="chat-bubble from-me">
-                Did you check out Pages framework ?
+                | Did you check out Pages framework ?
               </div>
             </div>
 
 
             <div class="message clearfix">
               <div class="chat-bubble from-me">
-                Its an awesome chat
+                | Its an awesome chat
               </div>
             </div>
 
 
             <div class="message clearfix">
               <div class="profile-img-wrapper m-t-5 inline">
-                <img class="col-top" width="30" height="30" src="assets/img/profiles/avatar_small.jpg" alt="" data-src="assets/img/profiles/avatar_small.jpg" data-src-retina="assets/img/profiles/avatar_small2x.jpg">
+                = image_tag current_user.photo_url
               </div>
               <div class="chat-bubble from-them">
-                Yea
+                | Yea
               </div>
             </div>
 

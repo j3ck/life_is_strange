@@ -4,6 +4,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :name
       t.string :provider
       t.string :uid
+      t.string :photo_url
       t.float :gold
 
       t.timestamps null: false

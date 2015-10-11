@@ -6,6 +6,7 @@
 #  name       :string
 #  provider   :string
 #  uid        :string
+#  photo_url  :string
 #  gold       :float
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
@@ -42,7 +43,7 @@ class User < ActiveRecord::Base
       end
 
       if auth_hash[:provider] == 'twitter'
-        user.update(name: auth_hash[:info][:nickname])
+        user.update(name: auth_hash[:info][:nickname], photo_url: auth_hash[:info][:image])
       end
     user
   end
