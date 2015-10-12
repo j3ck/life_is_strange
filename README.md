@@ -1,3 +1,3 @@
 == README
 
-`git pull --depth=1`
+`git pull origin master --depth=1`
