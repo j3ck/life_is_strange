@@ -81,7 +81,8 @@ gem 'rmagick'
 # Deploy
 gem 'capistrano', '~> 3.3.5'
 gem 'capistrano-rails', '~> 1.1.2'
-gem 'capistrano-rbenv'
+# gem 'capistrano-rbenv'
+gem 'capistrano-rvm'
 gem 'capistrano3-unicorn'
 
 group :test do
