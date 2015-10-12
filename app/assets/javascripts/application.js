@@ -14,3 +14,4 @@
 //= require slick.min
 //= require Chart.min
 //= require base_pages_dashboard
+//= require_tree .
