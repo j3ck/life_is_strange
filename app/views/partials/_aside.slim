@@ -1,0 +1,128 @@
+/ Правое меню. Только для авторизованных пользователей
+- if current_user
+  <aside id="side-overlay">
+    <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 516px;">
+      <div id="side-overlay-scroll" style="overflow: hidden; width: auto; height: 516px;">
+        <div class="side-header side-content">
+          <button class="btn btn-default pull-right" type="button" data-toggle="layout" data-action="side_overlay_close">
+            <i class="fa fa-times"></i>
+          </button>
+          <span>
+            = image_tag current_user.photo_url, class: 'img-avatar img-avatar32'
+            span.font-w600.push-10-l
+              = current_user.name
+          </span>
+        </div>
+        <div class="side-content remove-padding-t">
+          <div class="block pull-r-l">
+            <div class="block-header bg-gray-lighter">
+              <ul class="block-options">
+                <li>
+                  <button type="button" data-toggle="block-option" data-action="refresh_toggle" data-action-mode="demo"><i class="si si-refresh"></i></button>
+                </li>
+                <li>
+                  <button type="button" data-toggle="block-option" data-action="content_toggle"><i class="si si-arrow-up"></i></button>
+                </li>
+              </ul>
+              <h3 class="block-title">Recent Activity</h3>
+            </div>
+            <div class="block-content">
+              <ul class="list list-activity">
+                <li>
+                  <i class="si si-wallet text-success"></i>
+                  <div class="font-w600">New sale ($15)</div>
+                  <div><a href="javascript:void(0)">Admin Template</a></div>
+                  <div>
+                    <small class="text-muted">3 min ago</small>
+                  </div>
+                </li>
+                <li>
+                  <i class="si si-pencil text-info"></i>
+                  <div class="font-w600">You edited the file</div>
+                  <div><a href="javascript:void(0)"><i class="fa fa-file-text-o"></i> Documentation.doc</a></div>
+                  <div>
+                    <small class="text-muted">15 min ago</small>
+                  </div>
+                </li>
+                <li>
+                  <i class="si si-close text-danger"></i>
+                  <div class="font-w600">Project deleted</div>
+                  <div><a href="javascript:void(0)">Line Icon Set</a></div>
+                  <div>
+                    <small class="text-muted">4 hours ago</small>
+                  </div>
+                </li>
+                <li>
+                  <i class="si si-wrench text-warning"></i>
+                  <div class="font-w600">Core v2.5 is available</div>
+                  <div><a href="javascript:void(0)">Update now</a></div>
+                  <div>
+                    <small class="text-muted">6 hours ago</small>
+                  </div>
+                </li>
+              </ul>
+              <div class="text-center">
+                <small><a href="javascript:void(0)">Load More..</a></small>
+              </div>
+            </div>
+          </div>
+          <div class="block pull-r-l">
+            <div class="block-header bg-gray-lighter">
+              <ul class="block-options">
+                <li>
+                  <button type="button" data-toggle="block-option" data-action="refresh_toggle" data-action-mode="demo"><i class="si si-refresh"></i></button>
+                </li>
+                <li>
+                  <button type="button" data-toggle="block-option" data-action="content_toggle"><i class="si si-arrow-up"></i></button>
+                </li>
+              </ul>
+              <h3 class="block-title">Online Friends</h3>
+            </div>
+            <div class="block-content block-content-full">
+              <ul class="nav-users">
+                <li>
+                  <a href="base_pages_profile.php">
+                    = image_tag '/images/andy.jpg', class: 'img-avatar'
+                    <i class="fa fa-circle text-success"></i> Andy
+                    <div class="font-w400 text-muted">
+                      <small>Administrator</small>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="block pull-r-l">
+            <div class="block-header bg-gray-lighter">
+              <ul class="block-options">
+                <li>
+                  <button type="button" data-toggle="block-option" data-action="content_toggle"><i class="si si-arrow-up"></i></button>
+                </li>
+              </ul>
+              <h3 class="block-title">Quick Settings</h3>
+            </div>
+            <div class="block-content">
+              <form class="form-bordered" action="index.php" method="post" onsubmit="return false;">
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-xs-8">
+                      <div class="font-s13 font-w600">API Access</div>
+                      <div class="font-s13 font-w400 text-muted">Enable/Disable access</div>
+                    </div>
+                    <div class="col-xs-4 text-right">
+                      <label class="css-input switch switch-sm switch-primary push-10-t">
+                        <input type="checkbox" checked="">
+                        <span></span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slimScrollBar" style="width: 5px; position: absolute; top: 0px; opacity: 0.35; display: none; border-radius: 7px; z-index: 99; right: 2px; height: 367.25px; background: rgb(0, 0, 0);"></div>
+      <div class="slimScrollRail" style="width: 5px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; opacity: 1; z-index: 90; right: 2px; background: rgb(51, 51, 51);"></div>
+    </div>
+  </aside>
