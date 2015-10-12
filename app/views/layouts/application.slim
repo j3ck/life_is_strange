@@ -17,7 +17,10 @@ html
       = favicon_link_tag '/favicon.png', :rel => 'shortcut icon'
 
   body.pace-done
-    = render './partials/header'
-    = yield
-    = render './partials/footer'
-    = javascript_include_tag "application"
+    div#page-container.sidebar-l.sidebar-mini.sidebar-o.side-scroll.header-navbar-fixed.header-navbar-scroll class="#{'header-navbar-transparent' unless current_user}"
+      / Левое меню (sidebar)
+      = render './partials/sidebar'
+      = render './partials/header'
+      = yield
+      = render './partials/footer'
+      = javascript_include_tag "application"

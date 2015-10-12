@@ -1,268 +1,219 @@
-div#page-container.sidebar-l.sidebar-mini.sidebar-o.side-scroll.header-navbar-fixed.header-navbar-transparent.header-navbar-scroll
-  / Левое меню
-  nav#sidebar
-    div.slimScrollDiv style="position: relative; overflow: hidden; width: auto; height: 589px;"
-      div#sidebar-scroll style="overflow: hidden; width: auto; height: 589px;"
-        div.sidebar-content
-          div.side-header.side-content
-            a.h5.text-white href="/"
-              i.fa.fa-send.text-primary
-              span.h4.font-w600.sidebar-mini-hide
-                = " Life is strange"
 
-          div.side-content
-            ul.nav-main
-              li
-                a href="#"
-                  i.si.si-home
-                  span.sidebar-mini-hide
-                    | Главная
-              li
-                a href="#"
-                  i.si.si-pencil
-                  span.sidebar-mini-hide
-                    | Наш блог
-              li
-                a href="#"
-                  i.si.si-envelope-open
-                  span.sidebar-mini-hide
-                    | Контакты
-              li.nav-main-heading
-                span.sidebar-mini-hide
-                  | Наш портал
-              li
-                a data-toggle="modal" data-class="animated bounceIn" data-timeout="800" data-target="#login"
-                  i.si.si-speedometer
-                  span.sidebar-mini-hide
-                    | Войти
-
-      div.slimScrollBar style="width: 5px; position: absolute; top: 0px; opacity: 0.35; display: none; border-radius: 7px; z-index: 99; right: 2px; height: 882px; background: rgb(255, 255, 255);"
-      div.slimScrollRail style="width: 5px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; opacity: 1; z-index: 90; right: 2px; background: rgb(51, 51, 51);"
+/ Главный заголовок
+main#main-container style="min-height: 231px;"
+  div.bg-image style="background-image: url('/back.jpg');"
+    div.bg-primary-dark-op
+      section.content.content-full.content-boxed.overflow-hidden
+        div.push-100-t.push-50.text-center
+          h1.h2.text-white.push-10.animated.fadeInDown data-toggle="appear" data-class="animated fadeInDown"
+            | Сообщество начинающих трансгуманистов
+          h2.h5.text-white-op.push-50.animated.fadeInDown data-toggle="appear" data-class="animated fadeInDown"
+            | Многофункциональная платформа для перехода на новый уровень
+          a class="btn btn-rounded btn-noborder btn-lg btn-primary animated bounceIn" data-toggle="modal" data-class="animated bounceIn" data-timeout="800" data-target="#login"
+            | Присоединиться
+        div.row.animated.fadeInUp data-toggle="appear" data-class="animated fadeInUp"
+          div.col-sm-8.col-sm-offset-2
+            img.img-responsive.pull-b src="/images/promo2.jpg" alt=""
 
 
 
 
-
-
-
-
-
-
-  / Главный заголовок
-  main#main-container style="min-height: 231px;"
-    div.bg-image style="background-image: url('/back.jpg');"
-      div.bg-primary-dark-op
-        section.content.content-full.content-boxed.overflow-hidden
-          div.push-100-t.push-50.text-center
-            h1.h2.text-white.push-10.animated.fadeInDown data-toggle="appear" data-class="animated fadeInDown"
-              | Сообщество начинающих трансгуманистов
-            h2.h5.text-white-op.push-50.animated.fadeInDown data-toggle="appear" data-class="animated fadeInDown"
-              | Многофункциональная платформа для перехода на новый уровень
-            a class="btn btn-rounded btn-noborder btn-lg btn-primary animated bounceIn" data-toggle="modal" data-class="animated bounceIn" data-timeout="800" data-target="#login"
-              | Присоединиться
-          div.row.animated.fadeInUp data-toggle="appear" data-class="animated fadeInUp"
-            div.col-sm-8.col-sm-offset-2
-              img.img-responsive.pull-b src="/images/promo2.jpg" alt=""
-
-
-
-
-      / Модальное окно авторизации
-      div.modal.fade#login tabindex="-1" role="dialog" aria-hidden="true" style="display: none;"
-        div.modal-dialog.text-center
-          div.modal-content
-            div.block.block-themed.block-transparent.remove-margin-b
-              div.block-header.bg-primary-dark
-                h3.block-title
-                  | Правила
-              div.block-content
-                p
-                  | Сообщество трансгуманистов это группа свободных людей со свободными взглядами и самыми разнообразными интересами.
-                p
-                  | Вне зависимости от того, разделяете вы наши взгляды или нет, собираетесь ли стать частью нашего общества или нет, просим вас вести себя в рамках приличия.
-                p
-                  | Так же у нас есть особый список требований и обязательств для тех кто по-настоящему желает шагнуть в будущее уже сегодня.
-                p
-                  | И всё же... Надеемся вам у нас понравится!
-                hr
-                p
-                  = link_to '/auth/facebook' do
-                    button.btn.btn-block.btn-primary.push-10 type="button"
-                      i.fa.fa-facebook.pull-left
-                      | Войти через Facebook
-                p
-                  = link_to '/auth/googleplus' do
-                    button.btn.btn-block.btn-danger.push-10 type="button"
-                      i.fa.fa-google-plus.pull-left
-                      | Войти через Google+
-                p
-                  = link_to '/auth/twitter' do
-                    button.btn.btn-block.btn-default.push-10 type="button"
-                      i.fa.fa-twitter.pull-left
-                      | Войти через Twitter
-                p
-                  = link_to '/auth/vkontakte' do
-                    button.btn.btn-block.btn-info.push-10 type="button"
-                      i.fa.fa-vk.pull-left
-                      | Войти через Vk
-
-
-
-
-    div.bg-white
-      section.content.content-boxed
-        div.row.items-push-3x.push-50-t.nice-copy
-          div.col-sm-4
-            div.text-center.push-30
-              span.item.item-2x.item-circle.border
-                i.si.si-book-open
-            h3.h5.font-w600.text-uppercase.text-center.push-10
-              | Инструкция
-            p.text-center
-              | Мы вместе пишем свою книгу, в которой пытаемся описать идеальный мир будущего во всех его проявлениях
-          div.col-sm-4
-            div.text-center.push
-              span.item.item-2x.item-circle.border
-                i.fa.fa-battery-3
-            h3.h5.font-w600.text-uppercase.text-center.push-10
-              | Тренажёрный зал
-            p.text-center
-              | Держим себя в форме, делимся достижениями с членами сообщества, повышаем индекс здоровья
-          div.col-sm-4
-            div.text-center.push
-              span.item.item-2x.item-circle.border
-                i.si.si-bubbles
-            h3.h5.font-w600.text-uppercase.text-center.push-10
-              | Форум
-            p.text-center
-              | В вашем распоряжении самые последние разработки в сфере организации сетевого общения
-
-
-        div.row.items-push-3x.nice-copy
-          div.col-sm-4
-            div.text-center.push
-              span.item.item-2x.item-circle.border
-                i.fa.fa-money
-            h3.h5.font-w600.text-uppercase.text-center.push-10
-              | Экономика
-            p.text-center
-              | Работаем над созданием новой унифицированной цифровой валюты основанной на новом принципе
-          div.col-sm-4
-            div.text-center.push-30
-              span.item.item-2x.item-circle.border
-                i.fa.fa-medkit
-            h3.h5.font-w600.text-center.push-10
-              | Медицина
-            p.text-center
-              | Собираем информацию по препаратам для улучшения когнитивной функции и составляем список биологически активных добавок
-          div.col-sm-4
-            div.text-center.push
-              span.item.item-2x.item-circle.border
-                i.si.si-layers
-            h3.h5.font-w600.text-uppercase.text-center.push-10
-              | И многое другое...
-            p.text-center
-              | Персональные блоги, заметки, таймеры, списки задач на день/неделю/месяц и прочее...
-
-    / Блок статистики
-    div.bg-gray-lighter
-      section.content.content-boxed
-        div.row.items-push.push-20-t.push-20.text-center
-          div.col-sm-4
-            div.h1.push-5 data-toggle="countTo" data-to="#{User.all.count}" data-after="+"
-              = User.all.count
-            div.font-w600.text-uppercase.text-muted
-              | Членов сообщества
-          div.col-sm-4
-            div.h1.push-5 data-toggle="countTo" data-to="1" data-after="+"
-              | 1
-            div.font-w600.text-uppercase.text-muted
-              | Сообщений на форуме
-          div.col-sm-4
-            div.h1.push-5 data-toggle="countTo" data-to="1" data-after="+"
-              | 1
-            div.font-w600.text-uppercase.text-muted
-              | Монета
-
-    / Блок описания портала
-    div.bg-white
-      section.content.content-boxed.overflow-hidden
-        div.row.items-push-2x.push-30-t.nice-copy
-          div.col-lg-5
-
-            div.push-50.animated.fadeInLeft data-toggle="appear" data-class="animated fadeInLeft"
-              h3.h5.font-w600.text-uppercase.push-5
-                i.fa.fa-check.text-flat.push-5-r
-                | Наш портал
-              h4.h3.font-w300.push-10
-                | Общая панель управления
+    / Модальное окно авторизации
+    div.modal.fade#login tabindex="-1" role="dialog" aria-hidden="true" style="display: none;"
+      div.modal-dialog.text-center
+        div.modal-content
+          div.block.block-themed.block-transparent.remove-margin-b
+            div.block-header.bg-primary-dark
+              h3.block-title
+                | Правила
+            div.block-content
               p
-                | Мы разрабатываем интуитивно понятную систему управления данными по тематике трансгуманизма, иммортализма и сингулярности.
+                | Сообщество трансгуманистов это группа свободных людей со свободными взглядами и самыми разнообразными интересами.
               p
-                | В вашем распоряжении общая база данных и все необходимые инструменты для работы с ней.
-            div.animated.fadeInLeft data-toggle="appear" data-timeout="300" data-class="animated fadeInLeft"
-              h3.h5.font-w600.text-uppercase.push-5
-                i.fa.fa-tablet.text-amethyst.push-5-r
-                | Совместная разработка
-              h4.h3.font-w300.push-10
-                | Открытый репозиторий
+                | Вне зависимости от того, разделяете вы наши взгляды или нет, собираетесь ли стать частью нашего общества или нет, просим вас вести себя в рамках приличия.
               p
-                = "Исходики проекта находятся "
-                = link_to 'https://github.com/riley-usagi/life_is_strange' do
-                  = " в открытом доступе, "
-                = "для всех желающих внести свой вклад."
+                | Так же у нас есть особый список требований и обязательств для тех кто по-настоящему желает шагнуть в будущее уже сегодня.
               p
-                | Система разрабатывается на основе языка Ruby (с использованием фреймворка Ruby On Rails)
-
-          div.col-lg-5.col-lg-offset-2.visible-lg
-            img.img-responsive.animated.fadeInRight data-toggle="appear" data-offset="-250" data-class="animated fadeInRight" src="/images/promo3.jpg" alt=""
-
-
-    / Блок комментариев администрации
-    div.bg-image style="background-image: url('/back.jpg');"
-      div.bg-primary-dark-op
-        section.content.content-full.content-boxed
-          div.row.items-push-2x.push-50-t.text-center
-
-            div.col-sm-4.col-sm-offset-2.animated.fadeIn data-toggle="appear" data-offset="-150"
-              = image_tag 'https://pbs.twimg.com/profile_images/653143797606420480/EgM9s62l_400x400.jpg', class: 'img-avatar img-avatar-thumb'
-              div.text-warning.push-10-t.push-15
-                i.fa.fa-fw.fa-star
-                i.fa.fa-fw.fa-star
-                i.fa.fa-fw.fa-star
-                i.fa.fa-fw.fa-star
-                i.fa.fa-fw.fa-star
-              div.h4.text-white-op.push-5
-                | Нет ничего более мотивирующего для человека чем вечносерое небо и безысодность бытия!
-              div.h6.text-gray
-                | - Riley Usagi
-
-            div.col-sm-4.animated.fadeIn data-toggle="appear" data-offset="-150" data-timeout="300"
-              = image_tag '/images/andy.jpg', class: 'img-avatar img-avatar-thumb'
-              div.text-warning.push-10-t.push-15
-                i.fa.fa-fw.fa-star
-                i.fa.fa-fw.fa-star
-                i.fa.fa-fw.fa-star
-                i.fa.fa-fw.fa-star
-                i.fa.fa-fw.fa-star
-              div.h4.text-white-op.push-5
-                | Голоса в моей голове говорят что нужно что-то делать. Делать! Иначе трындец, товарищи!
-              div.h6.text-gray
-                | - Andy
+                | И всё же... Надеемся вам у нас понравится!
+              hr
+              p
+                = link_to '/auth/facebook' do
+                  button.btn.btn-block.btn-primary.push-10 type="button"
+                    i.fa.fa-facebook.pull-left
+                    | Войти через Facebook
+              p
+                = link_to '/auth/googleplus' do
+                  button.btn.btn-block.btn-danger.push-10 type="button"
+                    i.fa.fa-google-plus.pull-left
+                    | Войти через Google+
+              p
+                = link_to '/auth/twitter' do
+                  button.btn.btn-block.btn-default.push-10 type="button"
+                    i.fa.fa-twitter.pull-left
+                    | Войти через Twitter
+              p
+                = link_to '/auth/vkontakte' do
+                  button.btn.btn-block.btn-info.push-10 type="button"
+                    i.fa.fa-vk.pull-left
+                    | Войти через Vk
 
 
 
 
-    <div class="bg-gray-lighter">
-      <section class="content content-full content-boxed">
-        <div class="push-20-t push-20 text-center">
-          h3.h4.push-20.animated.fadeIn data-toggle="appear"
-            | Уже сегодня ты можешь стать частью будущего! Так чего же ты ждёшь?
-          a.btn.btn-rounded.btn-noborder.btn-lg.btn-success.animated.bounceIn data-toggle="modal" data-class="animated bounceIn"  data-timeout="800" data-target="#login"
-            | Зарегистрироваться
-        </div>
-      </section>
-    </div>
+  div.bg-white
+    section.content.content-boxed
+      div.row.items-push-3x.push-50-t.nice-copy
+        div.col-sm-4
+          div.text-center.push-30
+            span.item.item-2x.item-circle.border
+              i.si.si-book-open
+          h3.h5.font-w600.text-uppercase.text-center.push-10
+            | Инструкция
+          p.text-center
+            | Мы вместе пишем свою книгу, в которой пытаемся описать идеальный мир будущего во всех его проявлениях
+        div.col-sm-4
+          div.text-center.push
+            span.item.item-2x.item-circle.border
+              i.fa.fa-battery-3
+          h3.h5.font-w600.text-uppercase.text-center.push-10
+            | Тренажёрный зал
+          p.text-center
+            | Держим себя в форме, делимся достижениями с членами сообщества, повышаем индекс здоровья
+        div.col-sm-4
+          div.text-center.push
+            span.item.item-2x.item-circle.border
+              i.si.si-bubbles
+          h3.h5.font-w600.text-uppercase.text-center.push-10
+            | Форум
+          p.text-center
+            | В вашем распоряжении самые последние разработки в сфере организации сетевого общения
+
+
+      div.row.items-push-3x.nice-copy
+        div.col-sm-4
+          div.text-center.push
+            span.item.item-2x.item-circle.border
+              i.fa.fa-money
+          h3.h5.font-w600.text-uppercase.text-center.push-10
+            | Экономика
+          p.text-center
+            | Работаем над созданием новой унифицированной цифровой валюты основанной на новом принципе
+        div.col-sm-4
+          div.text-center.push-30
+            span.item.item-2x.item-circle.border
+              i.fa.fa-medkit
+          h3.h5.font-w600.text-center.push-10
+            | Медицина
+          p.text-center
+            | Собираем информацию по препаратам для улучшения когнитивной функции и составляем список биологически активных добавок
+        div.col-sm-4
+          div.text-center.push
+            span.item.item-2x.item-circle.border
+              i.si.si-layers
+          h3.h5.font-w600.text-uppercase.text-center.push-10
+            | И многое другое...
+          p.text-center
+            | Персональные блоги, заметки, таймеры, списки задач на день/неделю/месяц и прочее...
+
+  / Блок статистики
+  div.bg-gray-lighter
+    section.content.content-boxed
+      div.row.items-push.push-20-t.push-20.text-center
+        div.col-sm-4
+          div.h1.push-5 data-toggle="countTo" data-to="#{User.all.count}" data-after="+"
+            = User.all.count
+          div.font-w600.text-uppercase.text-muted
+            | Членов сообщества
+        div.col-sm-4
+          div.h1.push-5 data-toggle="countTo" data-to="1" data-after="+"
+            | 1
+          div.font-w600.text-uppercase.text-muted
+            | Сообщений на форуме
+        div.col-sm-4
+          div.h1.push-5 data-toggle="countTo" data-to="1" data-after="+"
+            | 1
+          div.font-w600.text-uppercase.text-muted
+            | Монета
+
+  / Блок описания портала
+  div.bg-white
+    section.content.content-boxed.overflow-hidden
+      div.row.items-push-2x.push-30-t.nice-copy
+        div.col-lg-5
+
+          div.push-50.animated.fadeInLeft data-toggle="appear" data-class="animated fadeInLeft"
+            h3.h5.font-w600.text-uppercase.push-5
+              i.fa.fa-check.text-flat.push-5-r
+              | Наш портал
+            h4.h3.font-w300.push-10
+              | Общая панель управления
+            p
+              | Мы разрабатываем интуитивно понятную систему управления данными по тематике трансгуманизма, иммортализма и сингулярности.
+            p
+              | В вашем распоряжении общая база данных и все необходимые инструменты для работы с ней.
+          div.animated.fadeInLeft data-toggle="appear" data-timeout="300" data-class="animated fadeInLeft"
+            h3.h5.font-w600.text-uppercase.push-5
+              i.fa.fa-tablet.text-amethyst.push-5-r
+              | Совместная разработка
+            h4.h3.font-w300.push-10
+              | Открытый репозиторий
+            p
+              = "Исходики проекта находятся "
+              = link_to 'https://github.com/riley-usagi/life_is_strange' do
+                = " в открытом доступе, "
+              = "для всех желающих внести свой вклад."
+            p
+              | Система разрабатывается на основе языка Ruby (с использованием фреймворка Ruby On Rails)
+
+        div.col-lg-5.col-lg-offset-2.visible-lg
+          img.img-responsive.animated.fadeInRight data-toggle="appear" data-offset="-250" data-class="animated fadeInRight" src="/images/promo3.jpg" alt=""
+
+
+  / Блок комментариев администрации
+  div.bg-image style="background-image: url('/back.jpg');"
+    div.bg-primary-dark-op
+      section.content.content-full.content-boxed
+        div.row.items-push-2x.push-50-t.text-center
+
+          div.col-sm-4.col-sm-offset-2.animated.fadeIn data-toggle="appear" data-offset="-150"
+            = image_tag 'https://pbs.twimg.com/profile_images/653143797606420480/EgM9s62l_400x400.jpg', class: 'img-avatar img-avatar-thumb'
+            div.text-warning.push-10-t.push-15
+              i.fa.fa-fw.fa-star
+              i.fa.fa-fw.fa-star
+              i.fa.fa-fw.fa-star
+              i.fa.fa-fw.fa-star
+              i.fa.fa-fw.fa-star
+            div.h4.text-white-op.push-5
+              | Нет ничего более мотивирующего для человека чем вечносерое небо и безысодность бытия!
+            div.h6.text-gray
+              | - Riley Usagi
+
+          div.col-sm-4.animated.fadeIn data-toggle="appear" data-offset="-150" data-timeout="300"
+            = image_tag '/images/andy.jpg', class: 'img-avatar img-avatar-thumb'
+            div.text-warning.push-10-t.push-15
+              i.fa.fa-fw.fa-star
+              i.fa.fa-fw.fa-star
+              i.fa.fa-fw.fa-star
+              i.fa.fa-fw.fa-star
+              i.fa.fa-fw.fa-star
+            div.h4.text-white-op.push-5
+              | Голоса в моей голове говорят что нужно что-то делать. Делать! Иначе трындец, товарищи!
+            div.h6.text-gray
+              | - Andy
+
+
+
+
+  <div class="bg-gray-lighter">
+    <section class="content content-full content-boxed">
+      <div class="push-20-t push-20 text-center">
+        h3.h4.push-20.animated.fadeIn data-toggle="appear"
+          | Уже сегодня ты можешь стать частью будущего! Так чего же ты ждёшь?
+        a.btn.btn-rounded.btn-noborder.btn-lg.btn-success.animated.bounceIn data-toggle="modal" data-class="animated bounceIn"  data-timeout="800" data-target="#login"
+          | Зарегистрироваться
+      </div>
+    </section>
+  </div>
 
 
 
@@ -290,15 +241,15 @@ div#page-container.sidebar-l.sidebar-mini.sidebar-o.side-scroll.header-navbar-fi
 
 
 
-  <footer id="page-footer" class="bg-white">
-    <div class="content content-boxed">
+<footer id="page-footer" class="bg-white">
+  <div class="content content-boxed">
 
-      <div class="font-s12 push-20 clearfix">
-        <hr class="remove-margin-t">
-        <div class="pull-left">
-          <a class="font-w600" href="/">Сообщество трансгуманистов</a> ©
-          <span class="js-year-copy">2015</span>
-        </div>
+    <div class="font-s12 push-20 clearfix">
+      <hr class="remove-margin-t">
+      <div class="pull-left">
+        <a class="font-w600" href="/">Сообщество трансгуманистов</a> ©
+        <span class="js-year-copy">2015</span>
       </div>
     </div>
-  </footer>
+  </div>
+</footer>

@@ -1,13 +1,26 @@
 Rails.application.routes.draw do
-  root 'timers#index'
+  root 'main#dashboard'
 
   # Колбэки социальных сетей
   get '/auth/:provider/callback', to: 'session#create'
 
-  # Таймеры
-  resources :timers
-
+  # Главная промо-страница
   get 'login', to: 'main#login', as: :login_path
+
+  # Главная страница пользователя
+  get 'dashboard', to: 'main#dashboard', as: :dashboard
+
+  # get 'forum'
+  # get 'blog'
+  # get 'contacts'
+
+  get ':username/:controller/:action'
+
+
+
+
+
+
 
   # 404, используется как входящая страница для всех ссылок из социальных сетей с :UID
   # get '*a', to: redirect('/')

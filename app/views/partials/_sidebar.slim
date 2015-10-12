@@ -1,0 +1,82 @@
+/ Левое меню
+/ Промо-страница (когда пользователь на авторизован)
+- unless current_user
+  nav#sidebar
+    div.slimScrollDiv style="position: relative; overflow: hidden; width: auto; height: 589px;"
+      div#sidebar-scroll style="overflow: hidden; width: auto; height: 589px;"
+        div.sidebar-content
+          div.side-header.side-content
+            a.h5.text-white href="/"
+              i.fa.fa-send.text-primary
+              span.h4.font-w600.sidebar-mini-hide
+                = " Life is strange"
+
+          div.side-content
+            ul.nav-main
+              li
+                a href="#"
+                  i.si.si-home
+                  span.sidebar-mini-hide
+                    | Главная
+              li
+                a href="#"
+                  i.si.si-pencil
+                  span.sidebar-mini-hide
+                    | Наш блог
+              li
+                a href="#"
+                  i.si.si-envelope-open
+                  span.sidebar-mini-hide
+                    | Контакты
+              li.nav-main-heading
+                span.sidebar-mini-hide
+                  | Наш портал
+              li
+                a data-toggle="modal" data-class="animated bounceIn" data-timeout="800" data-target="#login"
+                  i.si.si-speedometer
+                  span.sidebar-mini-hide
+                    | Войти
+
+      div.slimScrollBar style="width: 5px; position: absolute; top: 0px; opacity: 0.35; display: none; border-radius: 7px; z-index: 99; right: 2px; height: 882px; background: rgb(255, 255, 255);"
+      div.slimScrollRail style="width: 5px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; opacity: 1; z-index: 90; right: 2px; background: rgb(51, 51, 51);"
+
+/ Пользователь авторизован и пункты левокго меню меняются
+- else
+  nav#sidebar
+    div.slimScrollDiv style="position: relative; overflow: hidden; width: auto; height: 589px;"
+      div#sidebar-scroll style="overflow: hidden; width: auto; height: 589px;"
+        div.sidebar-content
+          div.side-header.side-content
+            a.h5.text-white href="/"
+              i.fa.fa-send.text-primary
+              span.h4.font-w600.sidebar-mini-hide
+                = " Life is strange"
+
+          div.side-content
+            ul.nav-main
+              li
+                a href="#"
+                  i.si.si-home
+                  span.sidebar-mini-hide
+                    | Главная
+              li
+                a href="#"
+                  i.si.si-pencil
+                  span.sidebar-mini-hide
+                    | Наш блог
+              li
+                a href="#"
+                  i.si.si-envelope-open
+                  span.sidebar-mini-hide
+                    | Контакты
+              li.nav-main-heading
+                span.sidebar-mini-hide
+                  | Наш портал
+              li
+                a data-toggle="modal" data-class="animated bounceIn" data-timeout="800" data-target="#login"
+                  i.si.si-speedometer
+                  span.sidebar-mini-hide
+                    | Войти
+
+      div.slimScrollBar style="width: 5px; position: absolute; top: 0px; opacity: 0.35; display: none; border-radius: 7px; z-index: 99; right: 2px; height: 882px; background: rgb(255, 255, 255);"
+      div.slimScrollRail style="width: 5px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; opacity: 1; z-index: 90; right: 2px; background: rgb(51, 51, 51);"
