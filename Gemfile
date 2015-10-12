@@ -26,11 +26,10 @@ gem 'omniauth-soundcloud'
 # gem 'rails_admin_flatly_theme', github: 'konjoot/rails_admin_flatly_theme'
 
 # ORM
-gem 'mysql2', '~> 0.3.18'
 gem 'seed_dump'
 gem 'ar-octopus'
 gem 'redis'
-# gem 'pg'
+gem 'pg'
 
 # Forms
 gem 'simple_form'
@@ -98,6 +97,7 @@ group :test do
 end
 
 group :development do
+  gem 'mysql2', '~> 0.3.18', require: false
   gem 'better_errors'
   gem 'meta_request'
   gem 'annotate'

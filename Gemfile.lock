@@ -263,6 +263,7 @@ GEM
       multi_json
       omniauth (~> 1.0)
       omniauth-oauth2 (~> 1.1)
+    pg (0.18.3)
     phantomjs (1.9.8.0)
     pry (0.10.2)
       coderay (~> 1.1.0)
@@ -431,6 +432,7 @@ DEPENDENCIES
   omniauth-soundcloud
   omniauth-twitter
   omniauth-vkontakte
+  pg
   pry-rails
   puma
   rails
