@@ -13,25 +13,22 @@
 
 ActiveRecord::Schema.define(version: 20151011081331) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "timers", force: :cascade do |t|
-    t.integer  "user_id"
-    t.string   "name"
-    t.string   "status"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "user_id",    limit: 4
+    t.string   "name",       limit: 255
+    t.string   "status",     limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "name"
-    t.string   "provider"
-    t.string   "uid"
-    t.string   "photo_url"
-    t.float    "gold"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "name",       limit: 255
+    t.string   "provider",   limit: 255
+    t.string   "uid",        limit: 255
+    t.string   "photo_url",  limit: 255
+    t.float    "gold",       limit: 24
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
 end
