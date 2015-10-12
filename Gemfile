@@ -97,7 +97,7 @@ group :test do
 end
 
 group :development do
-  gem 'mysql2', '~> 0.3.18', require: false
+  gem 'mysql2', '~> 0.3.18'
   gem 'better_errors'
   gem 'meta_request'
   gem 'annotate'
