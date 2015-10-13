@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   # Блоги пользователей
   resources :blogs
+  get 'all_blogs', to: 'blogs#all_blogs', as: :all_blogs
 
   # Страницы пользователей
   resources :users

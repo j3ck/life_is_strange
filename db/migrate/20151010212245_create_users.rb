@@ -8,7 +8,8 @@ class CreateUsers < ActiveRecord::Migration
       t.float :gold
 
       t.string :blog_name, default: 'Измени меня'
-      t.string :blog_desc, default: ' На странице своего блога =)'
+      t.string :blog_desc, default: ' На странице настроек =)'
+      t.string :blog_image, default: '/back.jpg'
 
       t.timestamps null: false
     end

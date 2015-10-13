@@ -41,9 +41,10 @@ ActiveRecord::Schema.define(version: 20151013173810) do
     t.string   "photo_url"
     t.float    "gold"
     t.string   "blog_name",  default: "Измени меня"
-    t.string   "blog_desc",  default: " На странице своего блога =)"
-    t.datetime "created_at",                                          null: false
-    t.datetime "updated_at",                                          null: false
+    t.string   "blog_desc",  default: " На странице настроек =)"
+    t.string   "blog_image", default: "/back.jpg"
+    t.datetime "created_at",                                      null: false
+    t.datetime "updated_at",                                      null: false
   end
 
 end
