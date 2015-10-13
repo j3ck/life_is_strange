@@ -43,6 +43,13 @@ main#main-container style="min-height: 465px;"
                     | Поддерживается формат текста
                     = link_to " Markdown", 'https://help.github.com/articles/github-flavored-markdown/'
 
+              div.form-group
+                div.col-xs-12
+                  div.form-material
+                    label.col-xs-12
+                      | Изображение
+                    = f.input_field :image, as: :file
+
                     = f.hidden_field :user_id, value: current_user.id
               / Кнопка отправки сообщения в базу
               div.form-group
