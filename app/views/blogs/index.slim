@@ -30,14 +30,7 @@ main#main-container style="min-height: 311px;"
                     = article.title
                   p
                     = truncate(article.content, length: 100)
-      = paginate @articles
 
       / Пагинация (kaminari) по пять за раз
       nav.text-center
-        ul.pagination
-          li.active
-            a href="javascript:void(0)"
-              | 1
-          li
-            a href="javascript:void(0)"
-              i.fa.fa-angle-right
+        = paginate @articles
