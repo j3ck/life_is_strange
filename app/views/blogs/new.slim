@@ -1,0 +1,52 @@
+<main id="main-container" style="min-height: 465px;">
+  <div class="content">
+    <div class="row">
+      <div class="col-sm-12 col-lg-12">
+
+        <div class="block remove-margin-b">
+          <div class="block-header bg-gray-lighter">
+            <h3 class="block-title"><i class="fa fa-pencil"></i> Новая запись в блоге</h3>
+          </div>
+          <div class="block-content">
+            <form class="form-horizontal push-10-t push-10" action="base_pages_inbox.php" method="post" onsubmit="return false;">
+              <div class="form-group">
+                <div class="col-xs-12">
+                  <div class="form-material floating input-group">
+                    <input class="form-control" type="email" id="message-email" name="message-email">
+                    <label for="message-email">Email</label>
+                    <span class="input-group-addon"><i class="si si-envelope-open"></i></span>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-xs-12">
+                  <div class="form-material floating input-group">
+                    <input class="form-control" type="text" id="message-subject" name="message-subject">
+                    <label for="message-subject">Subject</label>
+                    <span class="input-group-addon"><i class="si si-book-open"></i></span>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-xs-12">
+                  <div class="form-material floating">
+                    <textarea class="form-control" id="message-msg" name="message-msg" rows="6"></textarea>
+                    <label for="message-msg">Message</label>
+                  </div>
+                  <div class="help-block text-right">Feel free to use common tags: &lt;blockquote&gt;, &lt;strong&gt;, &lt;em&gt;</div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-xs-12">
+                  <button class="btn btn-sm btn-default" type="submit">
+                    <i class="fa fa-send push-5-r"></i> Send Message</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</main>

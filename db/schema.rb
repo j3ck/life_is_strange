@@ -30,6 +30,8 @@ ActiveRecord::Schema.define(version: 20151011081331) do
     t.string   "uid"
     t.string   "photo_url"
     t.float    "gold"
+    t.string   "blog_name"
+    t.string   "blog_desc"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

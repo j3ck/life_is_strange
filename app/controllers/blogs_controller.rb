@@ -1,9 +1,16 @@
 class BlogsController < ApplicationController
 
-  before_action :user
+  before_action :auth
+  before_action :user, only: [:index, :show]
 
   def index
     raise user.inspect
+  end
+
+  def new
+  end
+
+  def create
   end
 
   private
@@ -14,6 +21,10 @@ class BlogsController < ApplicationController
       else
         @user = current_user
       end
+    end
+
+    def auth
+      redirect_to :login_path unless current_user
     end
 
 end
