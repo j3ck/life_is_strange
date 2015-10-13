@@ -10,13 +10,13 @@ main#main-container style="min-height: 465px;"
               = " Новая запись в блоге"
 
           div.block-content
-            form.form-horizontal.push-10-t.push-10 action="base_pages_inbox.php" method="post" onsubmit="return false;"
+            = simple_form_for :blog_post, url: {action: "create"}, html: {class: 'form-horizontal push-10-t push-10' } do |f|
               / Название записи
               div.form-group
                 div.col-xs-12
                   div.form-material.floating.input-group
-                    input.form-control type="email" id="message-email" name="message-email"
-                    label for="message-email"
+                    = f.input_field :title, class: 'form-control'
+                    label
                       | Название записи
                     span.input-group-addon
                       i.si.si-book-open
@@ -25,7 +25,7 @@ main#main-container style="min-height: 465px;"
               div.form-group
                 div.col-xs-12
                   div.form-material.floating.input-group
-                    input.form-control type="text" id="message-subject" name="message-subject"
+                    = f.input_field :desc, class: 'form-control'
                     label for="message-subject"
                       | Описание записи
                     span.input-group-addon
@@ -35,7 +35,7 @@ main#main-container style="min-height: 465px;"
               div.form-group
                 div.col-xs-12
                   div.form-material.floating
-                    textarea#message-msg class="form-control" name="message-msg" rows="6"
+                    = f.input_field :content, as: :text, rows: 6, class: 'form-control'
                     label for="message-msg"
                       | Текст записи
 
