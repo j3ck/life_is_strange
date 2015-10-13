@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   # Страницы пользователей
   resources :users
 
-  get ':username/:controller/:action'
+  get ':name/:controller/(:action)'
 
 
 
