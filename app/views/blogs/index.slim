@@ -1,0 +1,36 @@
+main#main-container style="min-height: 311px;"
+  / Ковёр блога
+  div.bg-image style="background-image: url(#{current_user.blog_image});"
+    div.bg-primary-dark-op
+      section.content.content-full.content-boxed.overflow-hidden
+        div.push-100-t.push-50.text-center
+          h1.h2.text-white.push-10.animated.fadeInDown data-toggle="appear" data-class="animated fadeInDown"
+            = @user.blog_name
+          h2.h5.text-white-op.animated.fadeInDown data-toggle="appear" data-class="animated fadeInDown"
+            = @user.blog_desc
+
+  section.content.content-boxed
+    div.push-50-t.push-50
+      div.row
+        div.col-sm-8.col-sm-offset-2
+
+          / перебор записей блога
+          - @articles.each do |article|
+            div.push.animated.fadeIn data-toggle="appear" data-offset="50" data-class="animated fadeIn"
+              = link_to blog_path(article.id), class: 'block block-link-hover2' do
+                = image_tag article.image, class: 'img-responsive hidden-sx'
+                div.block-content
+                  div.font-s12.push
+                    em.pull-right
+                      | 10 минут назад
+                    span.text-primary
+                      = @user.name
+                    = article.created_at.strftime(" %a %B %Y at %I:%M%p ")
+                  h4.push-10
+                    = article.title
+                  p
+                    = truncate(article.content, length: 100)
+
+      / Пагинация (kaminari) по пять за раз
+      nav.text-center
+        = paginate @articles

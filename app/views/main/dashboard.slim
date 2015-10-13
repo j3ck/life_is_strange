@@ -16,40 +16,59 @@ main#main-container style="min-height: 527px;"
 
   / Основной контент страницы
   div.content
-    <div class="row">
-      <div class="col-lg-8">
-        <div class="block">
-          <div class="block-header">
-            <h3 class="block-title">Статистика по монетам за год</h3>
-          </div>
-          <div class="block-content block-content-full bg-gray-lighter text-center">
-            <div style="height: 374px;">
-              <canvas id="CoinsChart" style="width: 100%; height: 100%;"></canvas>
+    div.row
+      / Блок со статистикой по монетам
+      div.col-lg-8
+        div.block
 
-              / <canvas class="js-dash-chartjs-lines" width="600" height="374" style="width: 600px; height: 374px;"></canvas>
-            </div>
-          </div>
-          <div class="block-content text-center">
-            <div class="row items-push text-center">
-              <div class="col-xs-6 col-lg-3">
-                <div class="push-10"><i class="si si-star fa-2x"></i></div>
-                <div class="h5 font-w300 text-muted">+ 1 монета</div>
-              </div>
-              <div class="col-xs-6 col-lg-3">
-                <div class="push-10"><i class="si si-users fa-2x"></i></div>
-                <div class="h5 font-w300 text-muted">+ 1 проект</div>
-              </div>
-              <div class="col-xs-6 col-lg-3 visible-lg">
-                <div class="push-10"><i class="si si-wallet fa-2x"></i></div>
-                <div class="h5 font-w300 text-muted">100 рублей</div>
-              </div>
-              <div class="col-xs-6 col-lg-3 visible-lg">
-                <div class="push-10"><i class="si si-graph fa-2x"></i></div>
-                <div class="h5 font-w300 text-muted">+ 100% рост</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+          div.block-header
+            h3.block-title
+              | Статистика по монетам за год
 
-    </div>
+          div.block-content.block-content-full.bg-gray-lighter.text-center
+            div style="height: 374px;"
+              canvas#CoinsChart style="width: 100%; height: 100%;"
+
+          div.block-content.text-center
+            div.row.items-push.text-center
+              div.col-xs-6.col-lg-3
+                div.push-10
+                  i.sisi-star.fa-2x
+                div.h5.font-w300.text-muted
+                  | + 1 монета
+              div.col-xs-6.col-lg-3
+                div.push-10
+                  i.sisi-users.fa-2x
+                div.h5.font-w300.text-muted
+                  | + 1 проект
+              div.col-xs-6.col-lg-3visible-lg
+                div.push-10
+                  i.sisi-wallet.fa-2x
+                div.h5.font-w300.text-muted
+                  | 100 рублей
+              div.col-xs-6.col-lg-3visible-lg
+                div.push-10
+                  i.sisi-graph.fa-2x
+                div.h5.font-w300.text-muted
+                  | + 100% рост
+
+
+
+      div.col-lg-4
+        div.block
+          div.block-header
+            h3.block-title
+              | Прогресс разработки
+              small
+                = " по модулям"
+          div.block-content
+            h4.h5.push-15
+              | Блоги
+            div.progress.active
+              div.progress-bar.progress-bar-primary.progress-bar-striped role="progressbar" aria-valuenow="#{@blogs_done}" aria-valuemin="0" aria-valuemax="100" style="width: #{@blogs_done}%;"
+                = @blogs_done
+            h4.h5.push-15
+              | Главная страница
+            div.progress.active
+              div.progress-bar.progress-bar-success.progress-bar-striped role="progressbar" aria-valuenow="#{@dashboard_done}" aria-valuemin="0" aria-valuemax="100" style="width: #{@dashboard_done}%;"
+                = @dashboard_done
