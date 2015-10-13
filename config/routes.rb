@@ -10,14 +10,7 @@ Rails.application.routes.draw do
   # Главная страница пользователя
   get 'dashboard', to: 'main#dashboard', as: :dashboard
 
-  # get 'forum'
-  # get 'blog'
-  # get 'contacts'
-
-  get ':username/:controller/:action'
-
-
-
+  # get ':username/:controller/:action'
 
 
 
