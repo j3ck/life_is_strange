@@ -5,8 +5,3 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-
-if User.all.count > 0
-  user = User.first
-  user.update!(blog_name: 'Житуха', blog_desc: 'братуха...')
-end

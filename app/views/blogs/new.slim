@@ -10,7 +10,7 @@ main#main-container style="min-height: 465px;"
               = " Новая запись в блоге"
 
           div.block-content
-            = simple_form_for :blog_post, url: {action: "create"}, html: {class: 'form-horizontal push-10-t push-10' } do |f|
+            = simple_form_for :blog_article, url: {action: "create"}, html: {class: 'form-horizontal push-10-t push-10' } do |f|
               / Название записи
               div.form-group
                 div.col-xs-12
@@ -43,6 +43,7 @@ main#main-container style="min-height: 465px;"
                     | Поддерживается формат текста
                     = link_to " Markdown", 'https://help.github.com/articles/github-flavored-markdown/'
 
+                    = f.hidden_field :user_id, value: current_user.id
               / Кнопка отправки сообщения в базу
               div.form-group
                 div.col-xs-12

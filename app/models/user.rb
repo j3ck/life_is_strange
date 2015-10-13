@@ -14,7 +14,7 @@
 
 class User < ActiveRecord::Base
 
-  has_many :timers
+  has_many :articles
 
   # Мы либо находим пользователя в базе по данным :provider и :uid,
   # либо создаём (через метод first_or_create) и тут же обновляем

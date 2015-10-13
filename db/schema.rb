@@ -11,10 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151011081331) do
+ActiveRecord::Schema.define(version: 20151013173810) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "articles", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "title"
+    t.string   "desc"
+    t.text     "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "timers", force: :cascade do |t|
     t.integer  "user_id"
@@ -30,10 +39,10 @@ ActiveRecord::Schema.define(version: 20151011081331) do
     t.string   "uid"
     t.string   "photo_url"
     t.float    "gold"
-    t.string   "blog_name"
-    t.string   "blog_desc"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "blog_name",  default: "Измени меня"
+    t.string   "blog_desc",  default: " На странице своего блога =)"
+    t.datetime "created_at",                                          null: false
+    t.datetime "updated_at",                                          null: false
   end
 
 end
