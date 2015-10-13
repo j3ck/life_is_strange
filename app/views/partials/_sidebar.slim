@@ -22,12 +22,12 @@ nav#sidebar
                   span.sidebar-mini-hide
                     | Наш блог
               li
-                = link_to '//forum.elanice-ai.ru' do
+                = link_to wip_path, class: ('active' if params[:action] == 'wip') do
                   i.si.si-bubbles
                   span.sidebar-mini-hide
                     | Форум
               li
-                a href="#"
+                = link_to wip_path, class: ('active' if params[:action] == 'wip') do
                   i.si.si-envelope-open
                   span.sidebar-mini-hide
                     | Контакты
@@ -39,7 +39,7 @@ nav#sidebar
                   i.si.si-speedometer
                   span.sidebar-mini-hide
                     | Войти
-        / Пользователь авторизован и пункты левокго меню меняются
+        / Пользователь авторизован и пункты левого меню меняются
         - else
           div.side-content
             ul.nav-main
