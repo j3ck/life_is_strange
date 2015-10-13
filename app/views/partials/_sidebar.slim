@@ -12,12 +12,12 @@ nav#sidebar
           div.side-content
             ul.nav-main
               li
-                a href="#"
+                = link_to root_path, class: ('active' if params[:action] == 'login') do
                   i.si.si-home
                   span.sidebar-mini-hide
                     | Главная
               li
-                a href="#"
+                = link_to wip_path, class: ('active' if params[:action] == 'wip') do
                   i.si.si-pencil
                   span.sidebar-mini-hide
                     | Наш блог

@@ -1,12 +1,15 @@
 class MainController < ApplicationController
 
-  before_action :auth, except: [:login]
+  before_action :auth, except: [:login, :wip]
 
   def login
     # raise current_user.inspect
   end
 
   def dashboard
+  end
+
+  def wip
   end
 
   private

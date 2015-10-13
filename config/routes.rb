@@ -10,11 +10,10 @@ Rails.application.routes.draw do
   # Главная страница пользователя
   get 'dashboard', to: 'main#dashboard', as: :dashboard
 
-  # get 'forum'
-  # get 'blog'
-  # get 'contacts'
+  # Страница в разработке
+  get 'work_in_progress', to: 'main#wip', as: :wip
 
-  get ':username/:controller/:action'
+  # get ':username/:controller/:action'
 
 
 

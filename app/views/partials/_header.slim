@@ -1,5 +1,5 @@
 / Верхнее меню портала, только для зарегистрированных пользователей
-- if current_user
+- if current_user && params[:action] != 'wip'
   <header id="header-navbar" class="content-mini content-mini-full">
     <ul class="nav-header pull-right">
       <li>
