@@ -11,8 +11,7 @@ class BlogsController < ApplicationController
   # Главная страница блогов конкретного пользователя
   def index
     @user = user
-    @articles = Article.where(user_id: @user.id).reverse
-    # raise user.inspect
+    @articles = Article.where(user_id: @user.id).order('id desc').page(1).per(2)
   end
 
   # Страница конкретной записи
