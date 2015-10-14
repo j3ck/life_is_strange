@@ -28,7 +28,7 @@ gem 'omniauth-soundcloud'
 # ORM
 gem 'seed_dump'
 gem 'ar-octopus'
-gem 'redis'
+gem 'redis-rails'
 gem 'pg'
 
 # Forms
