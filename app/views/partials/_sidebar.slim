@@ -94,6 +94,8 @@ nav#sidebar
                   i.si.si-camera
                   span.sidebar-mini-hide
                     | Фото
+
+              / Меню блогов
               li
                 a.nav-submenu data-toggle="nav-submenu" href="javascript:void(0);"
                   i.si.si-pencil
@@ -106,6 +108,7 @@ nav#sidebar
                     = link_to "Мои записи", blogs_url(subdomain: current_user.name)
                   li
                     = link_to "Новая запись", new_blog_url(subdomain: false)
+
               li
                 a href="javascript:void(0);"
                   i.si.si-briefcase

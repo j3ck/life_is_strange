@@ -31,7 +31,7 @@ class BlogsController < ApplicationController
     else
       flash["alert alert-danger"] = @message.errors.to_a.join('. ')
     end
-    redirect_to blog_path(post)
+    redirect_to(blogs_url(subdomain: current_user.name))
   end
 
   private
