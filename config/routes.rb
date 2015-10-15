@@ -14,10 +14,15 @@ Rails.application.routes.draw do
   resources :blogs
   get 'all_blogs', to: 'blogs#all_blogs', as: :all_blogs
 
-  # Страницы пользователей
-  resources :users
+  # Тренажёрный зал
+  resources :gym, only: [:index] do
+    # Обнуление статистики
+    get 'reset', on: :collection
+    # Общая информация о том как и что делать
+    get 'how_to', on: :collection
+  end
 
-  get ':name/:controller/(:action)'
+
 
 
 
