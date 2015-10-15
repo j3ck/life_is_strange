@@ -39,6 +39,7 @@ nav#sidebar
                   i.si.si-speedometer
                   span.sidebar-mini-hide
                     | Войти
+
         / Пользователь авторизован и пункты левого меню меняются
         - else
           div.side-content
@@ -48,91 +49,86 @@ nav#sidebar
                   i.si.si-home
                   span.sidebar-mini-hide
                     | Главная
-
               li
                 a href="javascript:void(0);"
                   i.si.si-bubbles
                   span.sidebar-mini-hide
                     | Форум
-
               li
                 a href="javascript:void(0);"
                   i.si.si-envelope
                   span.sidebar-mini-hide
                     | Почта
-
               li
                 a href="javascript:void(0);"
                   i.si.si-trophy
                   span.sidebar-mini-hide
                     | Тренажёрный зал
-
               li
                 a href="javascript:void(0);"
                   i.si.si-globe
                   span.sidebar-mini-hide
                     | Новости
-
               li
                 a href="javascript:void(0);"
                   i.si.si-drawer
                   span.sidebar-mini-hide
                     | Задачи
-
               li
                 a href="javascript:void(0);"
                   i.si.si-direction
                   span.sidebar-mini-hide
                     | Faq
-
               li
                 a href="javascript:void(0);"
                   i.si.si-energy
                   span.sidebar-mini-hide
                     | Правила
-
               li
                 a href="javascript:void(0);"
                   i.si.si-clock
                   span.sidebar-mini-hide
                     | Таймеры
-
               li
                 a href="javascript:void(0);"
                   i.si.si-camera
                   span.sidebar-mini-hide
                     | Фото
 
+              / Меню блогов
               li
-                a href="javascript:void(0);"
+                a.nav-submenu data-toggle="nav-submenu" href="javascript:void(0);"
                   i.si.si-pencil
                   span.sidebar-mini-hide
                     | Блог
+                ul
+                  li
+                    = link_to "Все блоги", all_blogs_url(subdomain: false)
+                  li
+                    = link_to "Мои записи", blogs_url(subdomain: current_user.name)
+                  li
+                    = link_to "Новая запись", new_blog_url(subdomain: false)
 
               li
                 a href="javascript:void(0);"
                   i.si.si-briefcase
                   span.sidebar-mini-hide
                     | Рабочая площадка
-
               li
                 a href="javascript:void(0);"
                   i.si.si-chemistry
                   span.sidebar-mini-hide
                     | Медицина
-
               li
                 a href="javascript:void(0);"
                   i.si.si-users
                   span.sidebar-mini-hide
                     | Ищем таланты
-
               li
                 a href="javascript:void(0);"
                   i.si.si-earphones-alt
                   span.sidebar-mini-hide
                     | Контакты
-
 
 
     div.slimScrollBar style="width: 5px; position: absolute; top: 0px; opacity: 0.35; display: none; border-radius: 7px; z-index: 99; right: 2px; height: 882px; background: rgb(255, 255, 255);"

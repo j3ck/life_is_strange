@@ -1,0 +1,59 @@
+main#main-container style="min-height: 465px;"
+  div.content
+    div.row
+      div.col-sm-12.col-lg-12
+
+        div.block.remove-margin-b
+          div.block-header.bg-gray-lighter
+            h3.block-title
+              i.si.si-pencil
+              = " Новая запись в блоге"
+
+          div.block-content
+            = simple_form_for :blog_article, url: {action: "create"}, html: {class: 'form-horizontal push-10-t push-10' } do |f|
+              / Название записи
+              div.form-group
+                div.col-xs-12
+                  div.form-material.floating.input-group
+                    = f.input_field :title, class: 'form-control'
+                    label
+                      | Название записи
+                    span.input-group-addon
+                      i.si.si-book-open
+
+              / Описание записи
+              div.form-group
+                div.col-xs-12
+                  div.form-material.floating.input-group
+                    = f.input_field :desc, class: 'form-control'
+                    label for="message-subject"
+                      | Описание записи
+                    span.input-group-addon
+                      i.si.si-book-open
+
+              / Сама запись
+              div.form-group
+                div.col-xs-12
+                  div.form-material.floating
+                    = f.input_field :content, as: :text, rows: 6, class: 'form-control'
+                    label for="message-msg"
+                      | Текст записи
+
+                  div.help-block.text-right
+                    | Поддерживается формат текста
+                    = link_to " Markdown", 'https://help.github.com/articles/github-flavored-markdown/'
+
+              div.form-group
+                div.col-xs-12
+                  div.form-material
+                    label.col-xs-12
+                      | Изображение
+                    = f.input_field :image, as: :file
+
+                    = f.hidden_field :user_id, value: current_user.id
+              / Кнопка отправки сообщения в базу
+              div.form-group
+                div.col-xs-12
+                  button.btn.btn-sm.btn-default type="submit"
+                    i.fa.fa-send.push-5-r
+                      = " Сохранить"
