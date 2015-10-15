@@ -1,0 +1,105 @@
+main#main-container style="min-height: 269px;"
+
+  / Верхний блок/приветствие
+  div.bg-primary-dark
+    section.content.content-full.content-boxed.overflow-hidden
+      div.push-100-t.push-50.text-center
+        h1.h2.text-white.push-10.animated.fadeInDown data-toggle="appear" data-class="animated fadeInDown"
+          | Последние записи в блогах
+        h2.h5.text-white-op.animated.fadeInDown data-toggle="appear" data-class="animated fadeInDown"
+          | Трансгуманизм, иммортализм и прочая сингулярность
+
+  / Список статей (по 5 за раз)
+  section.content.content-boxed
+    div.push-50-t.push-50
+      div.row
+
+        / Левая часть. Блок со списком записей
+        div.col-md-8
+
+          / Список всех записей в блогах, начиная с самых свежих (по 5 штук за раз)
+          - @articles.each do |article|
+            div.block
+              div.block-content
+                div.row.items-push
+                  div.col-md-4
+                    = link_to blog_url(article.friendly_id, subdomain: article.user.name) do
+                      = image_tag article.image, class: 'img-responsive'
+
+                  div.col-md-8
+                    div.font-s12.push-10
+                      em.pull-right
+                        | 10 минут назад
+
+                      / Todo: Здесь должна быть ссылка на страницу пользователя / страницу блогов пользователя
+                      = link_to "javascript:void(0)" do
+                        = article.user.name
+                      = article.created_at.strftime(" %a %B %Y at %I:%M%p ")
+
+                    h4.text-uppercase.push-10
+                      = link_to article.title, blog_url(article.friendly_id, subdomain: article.user.name), class: 'text-primary-dark'
+
+                    p.push-20
+                      = truncate(article.content, length: 100)
+
+                    div.btn-group.btn-group-sm
+                      = link_to 'Далее...', blog_url(article.friendly_id, subdomain: article.user.name), class: 'btn btn-default'
+
+          / Пагинация (kaminari) по пять за раз
+          nav.text-center
+            = paginate @articles
+
+
+        / Правый часть. Блок "Автор недели" и блок "Последние комментарии"
+        div.col-md-4
+          / Todo: Здесь должна быть ссылка на страницу пользователя / страницу блогов пользователя
+          = link_to "javascript:void(0)", class: 'block block-link-hover3' do
+            div.block-header.bg-gray-lighter
+              h3.block-title
+                i.si.si-fire
+                = " Автор недели"
+
+            / Аватарка писателя недели
+            div.block-content.block-content-full.text-center
+              div
+                = image_tag @best_author.photo_url, class: 'img-avatar img-avatar96'
+              div.h5.push-15-t.push-5
+                = @best_author.name
+              div.font-s13.text-muted
+                = @best_author.job
+
+            div.block-content.border-t
+              div.row.items-push.text-center
+                div.col-xs-6
+                  div.push-5
+                    i.si.si-pencil.fa-2x
+                  div.h5.font-w300.text-muted
+                    = "Cтатей: " + @best_author.articles.count.to_s
+                div.col-xs-6
+                  div.push-5
+                    i.fa.fa-heart-o.fa-2x
+                  div.h5.font-w300.text-muted
+                    / Todo: Количество лайков
+                    | 177 лайков
+
+          / Блок с комментариями
+          div.block
+
+            / Block Header
+            div.block-header.bg-gray-lighter
+              h3.block-title
+                i.si.si-bubbles
+                = " Последние комментарии"
+
+            / Список комментариев (последние семь)
+            div.block-content
+              ul.list.list-simple
+                li
+                  div.push-5.clearfix
+                    span.font-s13.text-muted.push-10-l.pull-right
+                      | 7 минут назад
+                    = link_to @best_author.name, "javascript:void(0)"
+                    = " в "
+                    = link_to 'Радужный мост', "javascript:void(0)"
+                  div.font-s13
+                    | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
