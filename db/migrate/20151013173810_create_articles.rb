@@ -6,6 +6,7 @@ class CreateArticles < ActiveRecord::Migration
       t.string :desc
       t.text :content
       t.string :image
+      t.string :slug, unique: true
 
       t.timestamps null: false
     end
