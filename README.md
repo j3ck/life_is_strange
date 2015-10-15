@@ -5,7 +5,7 @@
 
 ---
 
-### [Дорожная карта проекта]()
+### [Дорожная карта проекта](https://github.com/riley-usagi/life_is_strange/blob/master/docs/roadmap.md)
 
 ---
 
@@ -44,9 +44,11 @@ TWITTER_SECRET=JnpujnKJUNPunhjbbyYYvYVFGOTFjYFUTY
 
 ```
 localhost:8080 # для Unicorn
-localhost:3000 # для Puma и т.д.```
+localhost:3000 # для Puma и т.д.
+```
 
 вы используете адрес
+
 
 ```
 lvh.me:8080 # для Unicorn
