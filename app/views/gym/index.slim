@@ -1,0 +1,43 @@
+main#main-container style="min-height: 584px;"
+  div.content
+    div.row
+
+      / Левый блок (список категорий, блок друзей, общая статистика)
+      div.col-sm-5.col-lg-3
+        div.collapse.navbar-collapse.remove-padding
+
+          / Список категорий
+          div.block
+            div.block-header.bg-gray-lighter
+              h3.block-title
+                | Категории
+            div.block-content
+              ul.nav.nav-pills.nav-stacked.push
+                li.active
+                  a href="javascript:void(0)"
+                    span.badge.pull-right
+                      | 3
+                    i.fa.fa-fw.fa-inbox.push-5-r
+                    | Подтягивания
+                li
+                  a href="javascript:void(0)"
+                    span.badge.pull-right
+                      | 48
+                    i.fa.fa-fw.fa-star.push-5-r
+                    | Отжимания
+
+          / Блок друзей
+          div.block
+            div.block-header.bg-gray-lighter
+              h3.block-title
+                | Друзья
+
+            div.block-content
+              ul.nav-users.push
+                li
+                  = link_to "javascript:void(0);" do
+                    = image_tag User.first.photo_url, class: 'img-avatar'
+                    i.fa.fa-circle.text-success
+                    = User.first.name
+                    div.font-w400.text-muted
+                      = User.first.job
