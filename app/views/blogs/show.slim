@@ -1,30 +1,34 @@
-<main id="main-container" style="min-height: 269px;">
-  <div class="bg-image" style="background-image: url('assets/img/photos/photo23@2x.jpg');">
-    <div class="bg-primary-op">
-      <section class="content content-full content-boxed overflow-hidden">
-        <div class="push-150-t push-150 text-center">
-          <h1 class="text-white push-10 animated fadeInDown" data-toggle="appear" data-class="animated fadeInDown">Travel the world and feel alive.</h1>
-          <h2 class="h5 text-white-op animated fadeInDown" data-toggle="appear" data-class="animated fadeInDown">Experience life like never before.</h2>
-        </div>
-      </section>
-    </div>
-  </div>
-  <div class="bg-white">
-    <section class="content content-boxed">
-      <div class="text-center">
-        <a class="link-effect font-s13 font-w600" href="javascript:void(0)">John Doe</a> on July 16, 2015 •
-        <em>5 min</em>
-      </div>
-      <div class="row push-50-t push-50 nice-copy-story">
-        <div class="col-sm-8 col-sm-offset-2">
-          <h3 class="font-w400 text-black push-50-t push-20">Experiences</h3>
-          <p>Potenti elit lectus augue eget iaculis vitae etiam, ullamcorper etiam bibendum ad feugiat magna accumsan dolor, nibh molestie cras hac ac ad massa, fusce ante convallis ante urna molestie vulputate bibendum tempus ante justo arcu erat accumsan            adipiscing risus, libero condimentum venenatis sit nisl nisi ultricies sed, fames aliquet consectetur consequat nostra molestie neque nullam scelerisque neque commodo turpis quisque etiam egestas vulputate massa, curabitur tellus massa venenatis            congue dolor enim integer luctus, nisi suscipit gravida fames quis vulputate nisi viverra luctus id leo dictum lorem, inceptos nibh orci.</p>
-          <div class="push-50-t clearfix">
-            <a class="btn btn-success" href="javascript:void(0)"><i class="fa fa-heart push-5-r"></i> Recommend</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
+main#main-container style="min-height: 269px;"
 
-</main>
+  / Верхний блок с изображением, названием описание статьи
+  div.bg-image style="background-image: url(#{@article.image});"
+    div.bg-primary-op
+      section.content.content-full.content-boxed.overflow-hidden
+        div.push-150-t.push-150.text-center
+          h1.text-white.push-10.animated.fadeInDown data-toggle="appear" data-class="animated fadeInDown"
+            = @article.title
+          h2.h5.text-white-op.animated.fadeInDown data-toggle="appear" data-class="animated fadeInDown"
+            = @article.desc
+
+  / Содержание статьи
+  div.bg-white
+    section.content.content-boxed
+
+      / Время создания и сколько прошло с момента написания статьи
+      div.text-center
+        / Todo: Здесь должна быть ссылка на страницу пользователя / страницу блогов пользователя
+        = link_to @user.name, "javascript:void(0)", class: 'link-effect font-s13 font-w600'
+        = @article.created_at.strftime(" %a %B %Y at %I:%M%p ")
+        em
+          = " • 5 минут назад"
+
+      / Основной текст статьи
+      div.row.push-50-t.push-50.nice-copy-story
+        div.col-sm-8.col-sm-offset-2
+          p
+            = @article.content
+          / Todo: необходим функционал для кнопки "Нравится"
+          div.push-50-t.clearfix
+            a.btn.btn-success href="javascript:void(0)"
+              i.fa.fa-heart.push-5-r
+              | Понравилось

@@ -16,7 +16,7 @@ class BlogsController < ApplicationController
 
   # Страница конкретной записи
   def show
-    @post = Article.friendly.find(params[:id])
+    @article = Article.friendly.find(params[:id])
   end
 
   # Форма создания записи в блоге
