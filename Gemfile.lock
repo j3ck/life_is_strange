@@ -447,11 +447,8 @@ DEPENDENCIES
   factory_girl
   factory_girl_rails
   flutie
-<<<<<<< HEAD
   friendly_id (~> 5.1.0)
-=======
   github_api
->>>>>>> feature/dashboard
   google-analytics-rails
   guard-jasmine
   jbuilder

@@ -66,9 +66,9 @@ main#main-container style="min-height: 527px;"
               | Блоги
             div.progress.active
               div.progress-bar.progress-bar-primary.progress-bar-striped role="progressbar" aria-valuenow="#{@blogs_done}" aria-valuemin="0" aria-valuemax="100" style="width: #{@blogs_done}%;"
-                = @blogs_done
+                = @blogs_done.to_s + " %"
             h4.h5.push-15
               | Главная страница
             div.progress.active
               div.progress-bar.progress-bar-success.progress-bar-striped role="progressbar" aria-valuenow="#{@dashboard_done}" aria-valuemin="0" aria-valuemax="100" style="width: #{@dashboard_done}%;"
-                = @dashboard_done
+                = @dashboard_done.to_s + " %"
