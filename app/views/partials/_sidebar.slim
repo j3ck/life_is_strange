@@ -103,7 +103,7 @@ nav#sidebar
                     | Блог
                 ul
                   li
-                    = link_to "Все блоги", all_blogs_path
+                    = link_to "Все блоги", all_blogs_url(subdomain: false)
                   li
                     = link_to "Мои записи", blogs_url(subdomain: current_user.name)
                   li

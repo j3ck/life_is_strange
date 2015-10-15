@@ -6,6 +6,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :uid
       t.string :photo_url
       t.float :gold
+      t.string :job, default: 'Свободная касса!'
 
       t.string :blog_name, default: 'Измени меня'
       t.string :blog_desc, default: ' На странице настроек =)'

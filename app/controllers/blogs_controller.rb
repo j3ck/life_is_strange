@@ -5,7 +5,8 @@ class BlogsController < ApplicationController
 
   # Страница со всеми записями всех блогов
   def all_blogs
-    @articles = Article.all.reverse
+    @articles = Article.all.order('id desc').page(params[:page]).per(5)
+    @best_author = User.all.sample
   end
 
   # Главная страница блогов конкретного пользователя
@@ -50,6 +51,7 @@ class BlogsController < ApplicationController
       end
     end
 
+    # Перекидываем на главную, если пользователь не авторизован
     def auth
       redirect_to :login_path unless current_user
     end
