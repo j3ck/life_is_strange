@@ -39,6 +39,7 @@ nav#sidebar
                   i.si.si-speedometer
                   span.sidebar-mini-hide
                     | Войти
+
         / Пользователь авторизован и пункты левого меню меняются
         - else
           div.side-content
@@ -102,7 +103,9 @@ nav#sidebar
                   li
                     = link_to "Все блоги", all_blogs_path
                   li
-                    = link_to "Мои записи", blogs_path
+                    = link_to "Мои записи", blogs_url(subdomain: current_user.name)
+                  li
+                    = link_to "Новая запись", new_blog_url(subdomain: false)
               li
                 a href="javascript:void(0);"
                   i.si.si-briefcase
