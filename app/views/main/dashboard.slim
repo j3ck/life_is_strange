@@ -29,6 +29,7 @@ main#main-container style="min-height: 527px;"
             div style="height: 374px;"
               canvas#CoinsChart style="width: 100%; height: 100%;"
 
+        / Сломанный футер у блока статистики
           div.block-content.text-center
             div.row.items-push.text-center
               div.col-xs-6.col-lg-3
@@ -61,13 +62,21 @@ main#main-container style="min-height: 527px;"
               small
                 = " по модулям"
           div.block-content
-            h4.h5.push-15
-              | Блоги
-            div.progress.active
-              div.progress-bar.progress-bar-primary.progress-bar-striped role="progressbar" aria-valuenow="#{@blogs_done}" aria-valuemin="0" aria-valuemax="100" style="width: #{@blogs_done}%;"
-                = @blogs_done.to_s + " %"
+
             h4.h5.push-15
               | Главная страница
             div.progress.active
               div.progress-bar.progress-bar-success.progress-bar-striped role="progressbar" aria-valuenow="#{@dashboard_done}" aria-valuemin="0" aria-valuemax="100" style="width: #{@dashboard_done}%;"
                 = @dashboard_done.to_s + " %"
+
+            h4.h5.push-15
+              | Блоги
+            div.progress.active
+              div.progress-bar.progress-bar-primary.progress-bar-striped role="progressbar" aria-valuenow="#{@blogs_done}" aria-valuemin="0" aria-valuemax="100" style="width: #{@blogs_done}%;"
+                = @blogs_done.to_s + " %"
+
+            h4.h5.push-15
+              | Тренажёрный зал
+            div.progress.active
+              div.progress-bar.progress-bar-warning.progress-bar-striped role="progressbar" aria-valuenow="#{@gym_done}" aria-valuemin="0" aria-valuemax="100" style="width: #{@gym_done}%;"
+                = @gym_done.to_s + " %"
