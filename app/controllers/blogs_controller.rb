@@ -5,31 +5,19 @@ class BlogsController < ApplicationController
 
   # Страница со всеми записями всех блогов
   def all_blogs
-<<<<<<< HEAD
     @articles = Article.all.order('id desc').page(params[:page]).per(5)
     @best_author = User.all.sample
-=======
-    @articles = Article.all.reverse
->>>>>>> feature/dashboard
   end
 
   # Главная страница блогов конкретного пользователя
   def index
     @user = user
-<<<<<<< HEAD
-    @articles = Article.where(user_id: @user.id).order('id desc').page(params[:page]).per(3)
-=======
     @articles = Article.where(user_id: @user.id).order('id desc').page(params[:page]).per(5)
->>>>>>> feature/dashboard
   end
 
   # Страница конкретной записи
   def show
-<<<<<<< HEAD
     @article = Article.friendly.find(params[:id])
-=======
-    @post = Article.last
->>>>>>> feature/dashboard
   end
 
   # Форма создания записи в блоге
@@ -44,11 +32,7 @@ class BlogsController < ApplicationController
     else
       flash["alert alert-danger"] = @message.errors.to_a.join('. ')
     end
-<<<<<<< HEAD
     redirect_to(blogs_url(subdomain: current_user.name))
-=======
-    redirect_to blog_path(post)
->>>>>>> feature/dashboard
   end
 
   private
@@ -67,10 +51,7 @@ class BlogsController < ApplicationController
       end
     end
 
-<<<<<<< HEAD
     # Перекидываем на главную, если пользователь не авторизован
-=======
->>>>>>> feature/dashboard
     def auth
       redirect_to :login_path unless current_user
     end

@@ -3,11 +3,15 @@
 # Table name: users
 #
 #  id         :integer          not null, primary key
-#  name       :string(255)
-#  provider   :string(255)
-#  uid        :string(255)
-#  photo_url  :string(255)
-#  gold       :float(24)
+#  name       :string
+#  provider   :string
+#  uid        :string
+#  photo_url  :string
+#  gold       :float
+#  job        :string           default("Свободная касса!")
+#  blog_name  :string           default("Измени меня")
+#  blog_desc  :string           default(" На странице настроек =)")
+#  blog_image :string           default("/back.jpg")
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
