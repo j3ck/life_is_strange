@@ -18,7 +18,10 @@
 
 class User < ActiveRecord::Base
 
+  # Имеет множество записей в блоге
   has_many :articles
+
+  # Имеет множество сообщений на фоорумах
   has_many :messages
 
   # Мы либо находим пользователя в базе по данным :provider и :uid,
