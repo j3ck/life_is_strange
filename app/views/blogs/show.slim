@@ -26,7 +26,7 @@ main#main-container style="min-height: 269px;"
       div.row.push-50-t.push-50.nice-copy-story
         div.col-sm-8.col-sm-offset-2
           p
-            = @article.content
+            = markdown(@article.content)
           / Todo: необходим функционал для кнопки "Нравится"
           div.push-50-t.clearfix
             a.btn.btn-success href="javascript:void(0)"

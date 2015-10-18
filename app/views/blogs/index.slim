@@ -29,7 +29,7 @@ main#main-container style="min-height: 311px;"
                   h4.push-10
                     = article.title
                   p
-                    = truncate(article.content, length: 100)
+                    = truncate(markdown(article.content), length: 100)
 
       / Пагинация (kaminari) по пять за раз
       nav.text-center
