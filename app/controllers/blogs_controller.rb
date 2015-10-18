@@ -20,11 +20,11 @@ class BlogsController < ApplicationController
     @article = Article.friendly.find(params[:id])
   end
 
-  # Форма создания записи в блоге
+  # Форма создания статьи в блоге
   def new
   end
 
-  # Процесс создания записи
+  # Процесс создания статьи
   def create
     post = Article.create(post_params)
     if post.save
@@ -34,6 +34,14 @@ class BlogsController < ApplicationController
       flash[:error] = post.errors.to_a.join('. ')
       redirect_to :back
     end
+  end
+
+  # Форма изменения статьи
+  def edit
+  end
+
+  # Процесс обновления статьи
+  def update
   end
 
   private
