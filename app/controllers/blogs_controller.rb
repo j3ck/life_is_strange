@@ -28,10 +28,10 @@ class BlogsController < ApplicationController
   def create
     post = Article.create(post_params)
     if post.save
-      flash["alert alert-success"] = 'Запись удачно сохранена'
+      flash[:success] = 'Запись удачно сохранена'
       redirect_to(blogs_url(subdomain: current_user.name))
     else
-      flash["alert alert-danger"] = post.errors.to_a.join('. ')
+      flash[:error] = post.errors.to_a.join('. ')
       redirect_to :back
     end
   end

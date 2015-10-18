@@ -1,6 +1,14 @@
 main#main-container style="min-height: 465px;"
   div.content
     div.row
+      - if flash[:error]
+        div.col-sm-12.col-lg-12
+          div.alert.alert-warning
+            h3.font-w300.push-15 Ошибка:
+            p
+              = flash[:error]
+
+
       div.col-sm-12.col-lg-12
 
         div.block.remove-margin-b
