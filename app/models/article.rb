@@ -36,6 +36,4 @@ class Article < ActiveRecord::Base
   # Используем carrierwave для загрузки изобраения к записи в блоге
   mount_uploader :image, ImageUploader
 
-  # TODO: необходимы валидации
-
 end
