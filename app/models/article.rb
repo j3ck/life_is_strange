@@ -16,6 +16,12 @@
 class Article < ActiveRecord::Base
   extend FriendlyId
 
+  # Валидации
+  validates :title, :desc, :content, presence: true
+  validates :title, uniqueness: :true
+  validates :title, :desc, length: { maximum: 255 }
+  validates :content, length: { maximum: 4000 }
+
   # Опимизируем систему для того, чтобы она понимала русский язык, зараза
   def normalize_friendly_id(text)
     text.to_slug.normalize(transliterations: :russian).to_s
