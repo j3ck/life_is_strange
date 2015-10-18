@@ -33,7 +33,7 @@ class Article < ActiveRecord::Base
   # Ищем по заголовкам, а не по id
   friendly_id :title, use: :slugged
 
-  # Используем carrierwave для загрузки изобраения к записи в блоге
+  # Используем carrierwave для загрузки изображения к записи в блоге
   mount_uploader :image, ImageUploader
 
 end
