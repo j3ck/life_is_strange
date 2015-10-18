@@ -38,8 +38,7 @@ gem 'simple_form'
 # gem 'tinymce-rails-langs'
 
 # Markdown
-# gem 'redcarpet'
-# gem 'markitup-rails'
+gem 'redcarpet'
 
 # Assets
 gem 'jquery-rails'
