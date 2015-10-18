@@ -40,7 +40,7 @@ main#main-container style="min-height: 269px;"
                       = link_to article.title, blog_url(article.friendly_id, subdomain: article.user.name), class: 'text-primary-dark'
 
                     p.push-20
-                      = truncate(article.content, length: 100)
+                      = truncate(markdown(article.content), length: 100).html_safe
 
                     div.btn-group.btn-group-sm
                       = link_to 'Далее...', blog_url(article.friendly_id, subdomain: article.user.name), class: 'btn btn-default'
