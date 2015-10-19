@@ -1,6 +1,7 @@
 class ForumController < ApplicationController
 
   before_action :auth
+  before_action :theme, only: :theme_name
 
   # Главная страница форума
   def index
@@ -36,9 +37,14 @@ class ForumController < ApplicationController
 
   # Страница конкретной темы
   def theme
+    @messages = theme_name.messages
   end
 
   private
+
+    def theme_name
+      theme_name = Theme.find_by(name: params[:id])
+    end
 
     def theme_params
       params.require(:blog_article).permit(:forum_id, :title, :desc, :content, :user_id)
