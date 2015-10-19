@@ -2,18 +2,19 @@
 #
 # Table name: users
 #
-#  id         :integer          not null, primary key
-#  name       :string
-#  provider   :string
-#  uid        :string
-#  photo_url  :string
-#  gold       :float
-#  job        :string           default("Свободная касса!")
-#  blog_name  :string           default("Измени меня")
-#  blog_desc  :string           default(" На странице настроек =)")
-#  blog_image :string           default("/back.jpg")
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id               :integer          not null, primary key
+#  name             :string
+#  provider         :string
+#  uid              :string
+#  photo_url        :string
+#  gold             :float
+#  job              :string           default("Свободная касса!")
+#  blog_name        :string           default("Измени меня")
+#  blog_desc        :string           default(" На странице настроек =)")
+#  blog_image       :string           default("/back.jpg")
+#  forum_about_text :string           default("Измени меня в настройках =)")
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
 #
 
 class User < ActiveRecord::Base

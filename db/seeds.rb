@@ -3,7 +3,7 @@ Theme.destroy_all
 Message.destroy_all
 User.destroy_all
 
-User.create(name: 'system', photo_url: '/umages/system.jpeg')
+User.create(name: 'system', photo_url: '/images/system.jpeg')
 
 Forum.create(
   [

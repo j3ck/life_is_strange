@@ -4,14 +4,12 @@ main#main-container style="min-height: 584px;"
     / Breadcrumbs
     ol.breadcrumb.push-15
       li
-        a.text-muted href="javascript:void(0);"
-          | Forums
+        = link_to 'Форум', forum_index_path, class: 'text-muted'
       li
         a.link-effect href="javascript:void(0);"
-          | Introduction
+          | Название форума
       li
-        a.link-effect href="javascript:void(0);"
-          | New Member!
+        = link_to params[:title], "javascript:void(0);"
 
     div.block
 
@@ -30,28 +28,31 @@ main#main-container style="min-height: 584px;"
         table.table.table-striped.table-borderless
           tbody
 
-            / Заголовок сообщения
-            tr
-              td.hidden-xs
-              td.font-s13.text-muted
-                a href="javascript:void(0);"
-                  | Emma Cooper</a>
-                  | on May 1, 2015 - 16:15
+            - @messages.each do |message|
+              / Заголовок сообщения
+              tr
+                td.hidden-xs
+                td.font-s13.text-muted
+                  a href="javascript:void(0);"
+                    = message.user.name
+                  = message.created_at.strftime(" %a %B %Y at %I:%M%p ")
 
-            / Информация о пользователе и сообщение
-            tr
-              td.text-center.hidden-xs style="width: 140px;"
-                div.push-10
-                  a href="javascript:void(0);">
-                    img.img-avatar src="assets/img/avatars/avatar8.jpg" alt=""
-                small 2 Posts
+              / Информация о пользователе и сообщение
+              tr
+                td.text-center.hidden-xs style="width: 140px;"
+                  div.push-10
+                    a href="javascript:void(0);"
+                      = image_tag message.user.photo_url, class: 'img-avatar'
+                  small 2 Posts
 
-              / Само сообщение
-              td
-                p
-                  | Potenti elit lectus augue eget iaculis vitae etiam, ullamcorper etiam bibendum ad feugiat magna accumsan dolor, nibh molestie cras hac ac ad massa, fusce ante convallis ante urna molestie vulputate bibendum tempus ante justo arcu erat
-                hr
-                p.font-s13.text-muted>There is only one way to avoid criticism: do nothing, say nothing, and be nothing.</p>
+                / Само сообщение
+                td
+                  p
+                    = message.content
+                  hr
+                  p.font-s13.text-muted
+                    = message.user.forum_about_text
+
 
             - if current_user
               / Заголовок формы ответа
@@ -66,7 +67,7 @@ main#main-container style="min-height: 584px;"
                 td.text-center.hidden-xs
                   div.push-10
                     a href="javascript:void(0);"
-                      img.img-avatar src="assets/img/avatars/avatar16.jpg" alt=""
+                      = image_tag current_user.photo_url, class: 'img-avatar'
                   small
                     | 850 Posts
 
@@ -74,7 +75,11 @@ main#main-container style="min-height: 584px;"
                   form.form-horizontal action="base_pages_forum_discussion.php" method="post" onsubmit="return false;"
                     div.form-group
                       div.col-xs-12
-                        <textarea id="js-ckeditor" name="ckeditor" style="visibility: hidden; display: none;"></textarea>
+                        div.form-material.floating.form-material-primary
+                          textarea.form-control name="material-textarea-large" rows="8"
+                          label for="material-textarea-large"
+                            | Ваше сообщение...
+
                     div.form-group
                       div.col-xs-12
                         button.btn.btn-sm.btn-primary type="submit"

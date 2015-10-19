@@ -1,6 +1,6 @@
 class ForumController < ApplicationController
 
-  before_action :auth
+  before_action :auth, only: [:new, :edit, :create, :update]
   before_action :theme, only: :theme_name
 
   # Главная страница форума
@@ -43,7 +43,7 @@ class ForumController < ApplicationController
   private
 
     def theme_name
-      theme_name = Theme.find_by(name: params[:id])
+      theme_name = Theme.find_by(name: params[:title])
     end
 
     def theme_params
