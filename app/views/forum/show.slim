@@ -34,51 +34,56 @@ main#main-container style="min-height: 584px;"
                 | Последнее
 
           tbody
-            <tr>
-              <td class="text-center" style="width: 75px;">
-                <i class="si si-pin fa-2x"></i>
-              </td>
-              <td>
-                <h4 class="h5 font-w600 push-5">
-                  <a href="base_pages_forum_discussion.php">Welcome to our forums!</a>
-                </h4>
-                <div class="font-s13 text-muted">
-                  <a href="base_pages_profile.php">Eugene Burke</a> on
-                  <em>June 20, 2015</em>
-                </div>
-              </td>
-              <td class="text-center hidden-xs hidden-sm">
-                <a class="font-w600" href="javascript:void(0)">136</a>
-              </td>
-              <td class="text-center hidden-xs hidden-sm">
-                <a class="font-w600" href="javascript:void(0)">650</a>
-              </td>
-              <td class="hidden-xs hidden-sm">
-                <span class="font-s13">by <a href="base_pages_profile.php">Keith Simpson</a>
-                  <br>July 21, 2015</span>
-              </td>
-            </tr>
-            <tr>
-              <td colspan="2">
-                <h4 class="h5 font-w600 push-5">
-                  <a href="base_pages_forum_discussion.php">Testing out the API</a>
-                </h4>
-                <div class="font-s13 text-muted">
-                  <a href="base_pages_profile.php">Sara Holland</a> on
-                  <em>April 25, 2015</em>
-                </div>
-              </td>
-              <td class="text-center hidden-xs hidden-sm">
-                <a class="font-w600" href="javascript:void(0)">350</a>
-              </td>
-              <td class="text-center hidden-xs hidden-sm">
-                <a class="font-w600" href="javascript:void(0)">1586</a>
-              </td>
-              <td class="hidden-xs hidden-sm">
-                <span class="font-s13">by <a href="base_pages_profile.php">Evelyn Willis</a>
-                  <br>July 4, 2015</span>
-              </td>
-            </tr>
+            - @pin.each do |pin_theme|
+              tr
+                td.text-center style="width: 75px;"
+                  i.si.si-pin.fa-2x
+                td
+                  h4.h5.font-w600.push-5
+                    a href="javascript:void(0);"
+                      = pin_theme.name
+                  div.font-s13.text-muted
+                    a href="javascript:void(0);"
+                      = pin_theme.user.name + " "
+                    em
+                      = pin_theme.created_at.strftime(" %d %B, %Y ")
+                td.text-center.hidden-xs.hidden-sm
+                  a.font-w600 href="javascript:void(0)"
+                    | 136
+                td.text-center.hidden-xs.hidden-sm
+                  a.font-w600 href="javascript:void(0)"
+                    | 650
+                td.hidden-xs.hidden-sm
+                  span.font-s13
+                    | by
+                    a href="javascript:void(0);"
+                      = " system"
+                    br
+                    | July 21, 2015
+            - @unpin.each do |theme|
+              tr
+                td colspan='2'
+                  h4.h5.font-w600.push-5
+                    a href="javascript:void(0);"
+                      = theme.name
+                  div.font-s13.text-muted
+                    a href="javascript:void(0);"
+                      = theme.user.name + " "
+                    em
+                      = theme.created_at.strftime(" %d %B, %Y ")
+                td.text-center.hidden-xs.hidden-sm
+                  a.font-w600 href="javascript:void(0)"
+                    | 136
+                td.text-center.hidden-xs.hidden-sm
+                  a.font-w600 href="javascript:void(0)"
+                    | 650
+                td.hidden-xs.hidden-sm
+                  span.font-s13
+                    | by
+                    a href="javascript:void(0);"
+                      = " system"
+                    br
+                    | July 21, 2015
 
         / Пагинация
         nav.text-right

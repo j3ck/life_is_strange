@@ -4,7 +4,7 @@ class CreateThemes < ActiveRecord::Migration
       t.string  :name
       t.integer :forum_id
       t.integer :user_id
-      t.boolean :pinned, default: nil
+      t.boolean :pinned, default: false
 
       t.timestamps null: false
     end

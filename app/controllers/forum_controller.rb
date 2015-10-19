@@ -8,7 +8,8 @@ class ForumController < ApplicationController
 
   # Страница форума со списком тем
   def show
-    @themes = Theme.where(forum_id: Forum.find_by(name: params[:id]).id)
+    @pin = Theme.where(forum_id: Forum.find_by(name: params[:id]).id).pin
+    @unpin = Theme.where(forum_id: Forum.find_by(name: params[:id]).id).unpin
     @forum  = Forum.find_by_name(params[:id])
   end
 

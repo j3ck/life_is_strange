@@ -26,8 +26,8 @@ Forum.create(
 
 Theme.create(
   [
-    {name: 'Внимание!', forum_id: 1, pinned: true},
-    {name: 'Книга', forum_id: 1},
+    {name: 'Внимание!', forum_id: 1, user_id: 1, pinned: true},
+    {name: 'Книга', forum_id: 1, user_id: 1},
   ]
 )
 
