@@ -19,4 +19,7 @@ class Theme < ActiveRecord::Base
   # Имеет множество сообщений
   has_many   :messages
 
+  # Закреплённые темы
+  scope :pinned, -> { where(pinned: true) }
+
 end

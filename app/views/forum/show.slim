@@ -1,36 +1,39 @@
-<main id="main-container" style="min-height: 584px;">
-  <div class="content content-narrow">
-    <ol class="breadcrumb push-15">
-      <li><a class="text-muted" href="base_pages_forum_categories.php">Forums</a></li>
-      <li><a class="link-effect" href="base_pages_forum_topics.php">Introduction</a></li>
-    </ol>
-    <div class="block">
-      <div class="block-header bg-gray-lighter">
-        <ul class="block-options">
-          <li>
-            <button type="button" data-toggle="block-option" data-action="fullscreen_toggle"><i class="si si-size-fullscreen"></i></button>
-          </li>
-          <li>
-            <button type="button" data-toggle="block-option" data-action="refresh_toggle" data-action-mode="demo"><i class="si si-refresh"></i></button>
-          </li>
-        </ul>
-        <ul class="block-options block-options-left">
-          <li>
-            <a href="base_pages_forum_new_topic.php"><i class="fa fa-plus"></i> New Topic</a>
-          </li>
-        </ul>
-      </div>
-      <div class="block-content">
-        <table class="table table-striped table-borderless table-vcenter">
-          <thead>
-            <tr>
-              <th colspan="2">Welcome</th>
-              <th class="text-center hidden-xs hidden-sm" style="width: 100px;">Replies</th>
-              <th class="text-center hidden-xs hidden-sm" style="width: 100px;">Views</th>
-              <th class="hidden-xs hidden-sm" style="width: 200px;">Last Post</th>
-            </tr>
-          </thead>
-          <tbody>
+main#main-container style="min-height: 584px;"
+  div.content.content-narrow
+
+    / Breadcrumbs
+    ol.breadcrumb.push-15
+      li
+        = link_to 'Форум', forum_index_path, class: 'text-muted'
+      li
+        = link_to params[:id].to_s, "javascript:void(0);", class: 'link-effect'
+
+    / Главный блок тем
+    div.block
+
+      / Заголовок и ссылка на создание новой темы
+      div.block-header.bg-gray-lighter
+        ul.block-options.block-options-left
+          li
+            = link_to new_forum_path do
+              i.fa.fa-plus
+              = " Новая тема"
+
+      / Список тем
+      div.block-content
+        table.table.table-striped.table-borderless.table-vcenter
+          thead
+            tr
+              th colspan="2"
+                = @forum.name
+              th.text-center.hidden-xs.hidden-sm style="width: 100px;"
+                | Ответов
+              th.text-center.hidden-xs.hidden-sm style="width: 100px;"
+                | Просмотров
+              th.hidden-xs.hidden-sm style="width: 200px;"
+                | Последнее
+
+          tbody
             <tr>
               <td class="text-center" style="width: 75px;">
                 <i class="si si-pin fa-2x"></i>
@@ -76,15 +79,10 @@
                   <br>July 4, 2015</span>
               </td>
             </tr>
-          </tbody>
-        </table>
-        <nav class="text-right">
-          <ul class="pagination">
-            <li class="active">
-              <a href="javascript:void(0)">1</a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </div>
-  </div>
+
+        / Пагинация
+        nav.text-right
+          ul.pagination
+            li.active
+              a href="javascript:void(0)"
+                | 1
