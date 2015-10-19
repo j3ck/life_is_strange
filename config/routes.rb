@@ -24,6 +24,8 @@ Rails.application.routes.draw do
 
   # Форум
   resources :forum
+  # Страница конкретной темы
+  get '/forum/theme/:title', to: 'forum#theme', as: :theme
 
 
 

@@ -15,9 +15,14 @@ main#main-container style="min-height: 584px;"
       div.block-header.bg-gray-lighter
         ul.block-options.block-options-left
           li
-            = link_to new_forum_path do
-              i.fa.fa-plus
-              = " Новая тема"
+            - unless current_user
+              a data-toggle="modal" data-class="animated bounceIn" data-timeout="800" data-target="#login"
+                i.fa.fa-plus
+                = " Новая тема"
+            - else
+              = link_to new_forum_path do
+                i.fa.fa-plus
+                = " Новая тема"
 
       / Список тем
       div.block-content
@@ -40,8 +45,7 @@ main#main-container style="min-height: 584px;"
                   i.si.si-pin.fa-2x
                 td
                   h4.h5.font-w600.push-5
-                    a href="javascript:void(0);"
-                      = pin_theme.name
+                    = link_to pin_theme.name, theme_path(pin_theme.name)
                   div.font-s13.text-muted
                     a href="javascript:void(0);"
                       = pin_theme.user.name + " "
