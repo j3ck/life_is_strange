@@ -11,6 +11,8 @@ main#main-container style="min-height: 584px;"
         h3.block-title
           | 0 новых сообщений с последнего посещения
       div.block-content.block-content-full
+
+        / Общество
         table.table.table-striped.table-borderless.table-vcenter
           thead
             tr
@@ -21,8 +23,6 @@ main#main-container style="min-height: 584px;"
               th.text-center.hidden-xs.hidden-sm style="width: 100px;"
                 | Сообщений
           tbody
-
-            / Список форумов в данной категории
             - @society.each do |society|
               tr
                 / Иконка форума
@@ -35,6 +35,38 @@ main#main-container style="min-height: 584px;"
                     = link_to society.name, forum_path(society.name)
                   div.font-s13.text-muted
                     = society.desc
+
+                td.text-center.hidden-xs.hidden-sm
+                  a.font-w600 href="javascript:void(0)"
+                    | 195
+                td.text-center.hidden-xs.hidden-sm
+                  a.font-w600 href="javascript:void(0)"
+                    | 756
+
+
+        / Наука
+        table.table.table-striped.table-borderless.table-vcenter
+          thead
+            tr
+              th colspan="2"
+                | Наука
+              th.text-center.hidden-xs.hidden-sm style="width: 100px;"
+                | Тем
+              th.text-center.hidden-xs.hidden-sm style="width: 100px;"
+                | Сообщений
+          tbody
+            - @science.each do |science|
+              tr
+                / Иконка форума
+                td.text-center style="width: 75px;"
+                  i class="#{science.icon} fa-2x"
+
+                / Название форума и ссылка
+                td
+                  h4.h5.font-w600.push-5
+                    = link_to science.name, forum_path(science.name)
+                  div.font-s13.text-muted
+                    = science.desc
 
                 td.text-center.hidden-xs.hidden-sm
                   a.font-w600 href="javascript:void(0)"

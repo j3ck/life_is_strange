@@ -18,5 +18,6 @@ class Forum < ActiveRecord::Base
 
   # Готовые выборки по категориям
   scope :society, -> { where(category_name: 'society') }
+  scope :science, -> { where(category_name: 'science') }
 
 end

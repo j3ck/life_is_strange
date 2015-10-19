@@ -3,6 +3,7 @@ class ForumController < ApplicationController
   # Главная страница форума
   def index
     @society = Forum.society
+    @science = Forum.science
   end
 
   # Страница форума со списком тем
