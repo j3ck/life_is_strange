@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(version: 20151019121928) do
     t.string   "name"
     t.integer  "forum_id"
     t.integer  "user_id"
+    t.boolean  "pinned"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -6,6 +6,7 @@
 #  name       :string
 #  forum_id   :integer
 #  user_id    :integer
+#  pinned     :boolean
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
