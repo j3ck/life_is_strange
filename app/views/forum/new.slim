@@ -1,78 +1,69 @@
-<main id="main-container" style="min-height: 584px;">
-  <div class="content content-narrow">
-    <ol class="breadcrumb push-15">
-      <li><a class="text-muted" href="base_pages_forum_categories.php">Forums</a></li>
-      <li><a class="link-effect" href="base_pages_forum_new_topic.php"><i class="fa fa-plus"></i> New Topic</a></li>
-    </ol>
-    <div class="block">
-      <div class="block-header bg-gray-lighter">
-        <ul class="block-options">
-          <li>
-            <button type="button" data-toggle="block-option" data-action="fullscreen_toggle"><i class="si si-size-fullscreen"></i></button>
-          </li>
-          <li>
-            <button type="button" data-toggle="block-option" data-action="refresh_toggle" data-action-mode="demo"><i class="si si-refresh"></i></button>
-          </li>
-        </ul>
-        <h3 class="block-title"><i class="fa fa-plus"></i> New Topic</h3>
-      </div>
-      <div class="block-content block-content-full block-content-narrow">
-        <form class="form-horizontal push-10-t" action="base_pages_forum_new_topic.php" method="post" onsubmit="return false;">
-          <div class="form-group">
-            <div class="col-md-7">
-              <div class="form-material form-material-primary">
-                <select class="js-select2 form-control select2-hidden-accessible" id="topic-forum" name="topic-forum" style="width: 100%;" data-placeholder="Please select a category" tabindex="-1" aria-hidden="true">
-                  <option></option>
+main#main-container style="min-height: 584px;"
+  div.content.content-narrow
+
+    / Breadcrumbs
+    ol.breadcrumb.push-15
+      li
+        = link_to 'Форум', forum_index_path, class: 'text-muted'
+      li
+        i.fa.fa-plus
+        = link_to ' Новая тема', "javascript:void(0);", class: 'link-effect'
+
+    / Заголовок
+    div.block
+      div.block-header.bg-gray-lighter
+        h3.block-title
+        i.fa.fa-plus
+        = " Новая тема"
+
+      / Форма
+      div.block-content.block-content-full.block-content-narrow
+        form.form-horizontal.push-10-t action="base_pages_forum_new_topic.php" method="post" onsubmit="return false;"
+
+          / Выбор форума
+          div.form-group
+            div.col-md-7
+              div.form-material.form-material-primary
+                select.js-select2.form-control.select2-hidden-accessible name="topic-forum" style="width: 100%;" data-placeholder="Please select a category" tabindex="-1" aria-hidden="true"
+                  option
                   <option value="introduction" disabled="">INTRODUCTION</option>
                   <option value="welcome">- Welcome</option>
-                </select>
-                <span class="select2 select2-container select2-container--default select2-container--below" dir="ltr" style="width: 100%;">
-                  <span class="selection">
-                    <span class="select2-selection select2-selection--single" role="combobox" aria-autocomplete="list" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-topic-forum-container">
-                      <span class="select2-selection__rendered" id="select2-topic-forum-container" title="- Announcements">- Announcements</span>
-                      <span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span>
-                    </span>
-                  </span>
-                  <span class="dropdown-wrapper" aria-hidden="true"></span>
-                </span>
-                <label for="topic-forum">Forum
-                  <span class="text-danger">*</span>
-                </label>
-              </div>
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="col-md-7">
-              <div class="form-material form-material-primary">
-                <input class="form-control" type="text" id="topic-title" name="topic-title" placeholder="Please enter a title">
-                <label for="topic-title">Topic Title
-                  <span class="text-danger">*</span>
-                </label>
-              </div>
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="col-md-7">
-              <div class="form-material form-material-primary">
-                <input class="form-control" type="text" id="topic-description" name="topic-description" placeholder="Please enter a description">
-                <label for="topic-description">Topic Description</label>
-              </div>
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="col-xs-12">
-              <textarea id="js-ckeditor" name="ckeditor" style="visibility: hidden; display: none;"></textarea>
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="col-xs-12">
-              <button class="btn btn-sm btn-primary" type="submit"><i class="fa fa-plus"></i> Add Topic</button>
-              <button class="btn btn-sm btn-default" type="button"><i class="fa fa-eye"></i> Preview</button>
-              <button class="btn btn-sm btn-default" type="button"><i class="fa fa-floppy-o"></i> Draft</button>
-            </div>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</main>
+                label for="topic-forum"
+                  | Форум
+                  span.text-danger *
+
+          / Заголовок темы
+          div.form-group
+            div.col-md-7
+              div.form-material.form-material-primary
+                input.form-control type="text" name="topic-title" placeholder="В двух словах..."
+                label for="topic-title"
+                  | Название темы
+                  span.text-danger *
+
+          / Описание темы
+          div.form-group
+            div.col-md-7
+              div.form-material.form-material-primary
+                input.form-control type="text" name="topic-description" placeholder="Кратное описание..."
+                label for="topic-description"
+                  | Описание темы
+
+          / Текст темы
+          div.form-group
+            div.col-xs-12
+              div.form-material.form-material-primary
+                textarea.form-control name="material-textarea-large" rows="8" placeholder="Введите текст..."
+                label for="material-textarea-large"
+                  | Ваше сообщение...
+
+          / Действия
+          div.form-group
+            div.col-xs-12
+              button.btn.btn-sm.btn-primary type="submit"
+                i class="fa fa-plus"
+                = " Опубликовать"
+              /button.btn.btn-sm.btn-default type="button"
+                i class="fa fa-eye" Предпросмотр
+              /button.btn.btn-sm.btn-default type="button"
+                i class="fa fa-floppy-o" Черновик
