@@ -16,50 +16,6 @@ main#main-container style="min-height: 231px;"
             img.img-responsive.pull-b src="/images/promo2.jpg" alt=""
 
 
-
-
-    / Модальное окно авторизации
-    div.modal.fade#login tabindex="-1" role="dialog" aria-hidden="true" style="display: none;"
-      div.modal-dialog.text-center
-        div.modal-content
-          div.block.block-themed.block-transparent.remove-margin-b
-            div.block-header.bg-primary-dark
-              h3.block-title
-                | Правила
-            div.block-content
-              p
-                | Сообщество трансгуманистов это группа свободных людей со свободными взглядами и самыми разнообразными интересами.
-              p
-                | Вне зависимости от того, разделяете вы наши взгляды или нет, собираетесь ли стать частью нашего общества или нет, просим вас вести себя в рамках приличия.
-              p
-                | Так же у нас есть особый список требований и обязательств для тех кто по-настоящему желает шагнуть в будущее уже сегодня.
-              p
-                | И всё же... Надеемся вам у нас понравится!
-              hr
-              p
-                = link_to '/auth/facebook' do
-                  button.btn.btn-block.btn-primary.push-10 type="button"
-                    i.fa.fa-facebook.pull-left
-                    | Войти через Facebook
-              p
-                = link_to '/auth/googleplus' do
-                  button.btn.btn-block.btn-danger.push-10 type="button"
-                    i.fa.fa-google-plus.pull-left
-                    | Войти через Google+
-              p
-                = link_to '/auth/twitter' do
-                  button.btn.btn-block.btn-default.push-10 type="button"
-                    i.fa.fa-twitter.pull-left
-                    | Войти через Twitter
-              p
-                = link_to '/auth/vkontakte' do
-                  button.btn.btn-block.btn-info.push-10 type="button"
-                    i.fa.fa-vk.pull-left
-                    | Войти через Vk
-
-
-
-
   div.bg-white
     section.content.content-boxed
       div.row.items-push-3x.push-50-t.nice-copy
