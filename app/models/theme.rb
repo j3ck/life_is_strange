@@ -12,4 +12,11 @@
 #
 
 class Theme < ActiveRecord::Base
+
+  # Находится в одном форуме
+  belongs_to :forum
+
+  # Имеет множество сообщений
+  has_many :meaasges
+
 end

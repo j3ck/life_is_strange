@@ -14,7 +14,7 @@ class Message < ActiveRecord::Base
   # Сообщение имеет одного владельца
   belongs_to :user
 
-  # Сообщение находится в одном форуме
-  belongs_to :forum
+  # Сообщение находится в одной теме
+  belongs_to :theme
 
 end

@@ -11,11 +11,8 @@
 
 class Forum < ActiveRecord::Base
 
-  # Имеет одну категорию
-  belongs_to :category
-
-  # Имеет множество сообщений в себе (в форуме)
-  has_many   :messages
+  # Имеет множество тем
+  has_many   :themes
 
   # Готовые выборки по категориям
   scope :society, -> { where(category_name: 'society') }
