@@ -22,6 +22,12 @@ class User < ActiveRecord::Base
   # Имеет множество записей в блоге
   has_many :articles
 
+  # Имеет множество начатых тем на форуме
+  has_many :themes
+
+  # Имеет множество сообщений на форуме
+  has_many :messages
+
   # Имеет множество сообщений на фоорумах
   has_many :messages
 
