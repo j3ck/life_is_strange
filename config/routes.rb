@@ -22,8 +22,8 @@ Rails.application.routes.draw do
     get 'how_to', on: :collection
   end
 
-
-
+  # Форум
+  resources :forum
 
 
 
