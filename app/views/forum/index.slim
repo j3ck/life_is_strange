@@ -9,7 +9,7 @@ main#main-container style="min-height: 584px;"
     div.block
       div.block-header.bg-gray-lighter
         h3.block-title
-          | 0 новых тем с последнего посещения
+          | 0 новых сообщений с последнего посещения
       div.block-content.block-content-full
         table.table.table-striped.table-borderless.table-vcenter
           thead
@@ -21,22 +21,24 @@ main#main-container style="min-height: 584px;"
               th.text-center.hidden-xs.hidden-sm style="width: 100px;"
                 | Сообщений
           tbody
-            tr
-              / Иконка форума
-              td.text-center style="width: 75px;"
-                i.si.si-check.fa-2x
 
-              / Название форума и ссылка
-              td
-                h4.h5.font-w600.push-5
-                  a href="javascript:void(0);"
-                    | Welcome
-                div.font-s13.text-muted
-                  | Описание форума
+            / Список форумов в данной категории
+            - @society.each do |society|
+              tr
+                / Иконка форума
+                td.text-center style="width: 75px;"
+                  i class="#{society.icon} fa-2x"
 
-              td.text-center.hidden-xs.hidden-sm
-                a.font-w600 href="javascript:void(0)"
-                  | 195
-              td.text-center.hidden-xs.hidden-sm
-                a.font-w600 href="javascript:void(0)"
-                  | 756
+                / Название форума и ссылка
+                td
+                  h4.h5.font-w600.push-5
+                    = link_to society.name, forum_path(society.name)
+                  div.font-s13.text-muted
+                    = society.desc
+
+                td.text-center.hidden-xs.hidden-sm
+                  a.font-w600 href="javascript:void(0)"
+                    | 195
+                td.text-center.hidden-xs.hidden-sm
+                  a.font-w600 href="javascript:void(0)"
+                    | 756
