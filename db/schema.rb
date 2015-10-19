@@ -48,8 +48,9 @@ ActiveRecord::Schema.define(version: 20151019121928) do
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
 
   create_table "messages", force: :cascade do |t|
+    t.text     "content"
     t.integer  "user_id"
-    t.integer  "forum_id"
+    t.integer  "theme_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

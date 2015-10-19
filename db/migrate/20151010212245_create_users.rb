@@ -5,7 +5,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :provider
       t.string :uid
       t.string :photo_url
-      t.float :gold
+      t.float  :gold
       t.string :job, default: 'Свободная касса!'
 
       t.string :blog_name, default: 'Измени меня'

@@ -17,6 +17,6 @@ class Theme < ActiveRecord::Base
   belongs_to :forum
 
   # Имеет множество сообщений
-  has_many :meaasges
+  has_many   :messages
 
 end
