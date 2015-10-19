@@ -20,13 +20,14 @@ Forum.create(
     {name: 'Биотехнологии', desc: 'default', category_name: 'science', icon: 'si si-chemistry'},
     {name: 'Нанотехнологии', desc: 'default', category_name: 'science', icon: 'si si-chemistry'},
     {name: 'Микроэлектроника', desc: 'default', category_name: 'science', icon: 'si si-chemistry'},
-    {name: 'Интернет технологии', desc: 'default', category_name: 'science', icon: 'si si-chemistry'}    
+    {name: 'Интернет технологии', desc: 'default', category_name: 'science', icon: 'si si-chemistry'}
   ]
 )
 
 Theme.create(
   [
-    {name: 'Книга', forum_id: 1}
+    {name: 'Внимание!', forum_id: 1, pinned: true},
+    {name: 'Книга', forum_id: 1},
   ]
 )
 
