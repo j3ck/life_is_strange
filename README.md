@@ -5,6 +5,10 @@
 
 ---
 
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/riley-usagi/life_is_strange?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+
+---
+
 ### [Дорожная карта проекта](https://github.com/riley-usagi/life_is_strange/blob/master/docs/roadmap.md)
 
 ---
