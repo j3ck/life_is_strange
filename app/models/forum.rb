@@ -18,6 +18,6 @@ class Forum < ActiveRecord::Base
   has_many   :messages
 
   # Готовые выборки по категориям
-  scope :society, -> { where(name: 'society') }
+  scope :society, -> { where(category_name: 'society') }
 
 end
