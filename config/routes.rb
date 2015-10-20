@@ -2,7 +2,15 @@ Rails.application.routes.draw do
   root 'main#dashboard'
 
   # Колбэки социальных сетей
-  get '/auth/:provider/callback', to: 'session#create'
+  # get '/auth/:provider/callback', to: 'session#create'
+
+  get 'oauth/authorize', as: :authorize
+
+  get 'oauth/deauthorize', as: :deauthorize
+
+  get 'oauth/request_access_token'
+
+
 
   # Главная промо-страница
   get 'login', to: 'main#login', as: :login_path

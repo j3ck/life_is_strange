@@ -9,8 +9,14 @@ main#main-container style="min-height: 231px;"
             | Сообщество начинающих трансгуманистов
           h2.h5.text-white-op.push-50.animated.fadeInDown data-toggle="appear" data-class="animated fadeInDown"
             | Многофункциональная платформа для перехода на новый уровень
-          a class="btn btn-rounded btn-noborder btn-lg btn-primary animated bounceIn" data-toggle="modal" data-class="animated bounceIn" data-timeout="800" data-target="#login"
-            | Присоединиться
+          / a class="btn btn-rounded btn-noborder btn-lg btn-primary animated bounceIn" data-toggle="modal" data-class="animated bounceIn" data-timeout="800" data-target="#login"
+
+          - if session[:access_token].nil?
+            = link_to 'Login with Slack', authorize_path, class: 'btn btn-rounded btn-noborder btn-lg btn-primary animated bounceIn'
+          - else
+            = link_to 'Log Out of Slack', deauthorize_path, class: 'btn btn-rounded btn-noborder btn-lg btn-warning animated bounceIn'
+
+            / | Присоединиться
         div.row.animated.fadeInUp data-toggle="appear" data-class="animated fadeInUp"
           div.col-sm-8.col-sm-offset-2
             img.img-responsive.pull-b src="/images/promo2.jpg" alt=""

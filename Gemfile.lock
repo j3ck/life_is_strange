@@ -182,6 +182,9 @@ GEM
       tilt
     hashie (3.4.2)
     hitimes (1.2.3)
+    httparty (0.13.7)
+      json (~> 1.8)
+      multi_xml (>= 0.5.2)
     i18n (0.7.0)
     jasmine (2.3.1)
       jasmine-core (~> 2.3)
@@ -236,46 +239,12 @@ GEM
     notiffany (0.0.8)
       nenv (~> 0.1)
       shellany (~> 0.0)
-    oauth (0.4.7)
-    oauth2 (0.9.4)
+    oauth2 (1.0.0)
       faraday (>= 0.8, < 0.10)
       jwt (~> 1.0)
       multi_json (~> 1.3)
       multi_xml (~> 0.5)
       rack (~> 1.2)
-    omniauth (1.2.2)
-      hashie (>= 1.2, < 4)
-      rack (~> 1.0)
-    omniauth-facebook (1.6.0)
-      omniauth-oauth2 (~> 1.1)
-    omniauth-github (1.1.2)
-      omniauth (~> 1.0)
-      omniauth-oauth2 (~> 1.1)
-    omniauth-google-oauth2 (0.2.8)
-      addressable (~> 2.3)
-      jwt (~> 1.0)
-      multi_json (~> 1.3)
-      omniauth (>= 1.1.1)
-      omniauth-oauth2 (>= 1.1.1)
-    omniauth-googleplus (0.0.2)
-      omniauth-oauth (~> 1.0)
-    omniauth-oauth (1.1.0)
-      oauth
-      omniauth (~> 1.0)
-    omniauth-oauth2 (1.1.2)
-      faraday (>= 0.8, < 0.10)
-      multi_json (~> 1.3)
-      oauth2 (~> 0.9.3)
-      omniauth (~> 1.2)
-    omniauth-soundcloud (1.0.1)
-      omniauth-oauth2 (~> 1.1.0)
-    omniauth-twitter (1.2.1)
-      json (~> 1.3)
-      omniauth-oauth (~> 1.1)
-    omniauth-vkontakte (1.3.4)
-      multi_json
-      omniauth (~> 1.0)
-      omniauth-oauth2 (~> 1.1)
     pg (0.18.3)
     phantomjs (1.9.8.0)
     pry (0.10.3)
@@ -452,6 +421,7 @@ DEPENDENCIES
   github_api
   google-analytics-rails
   guard-jasmine
+  httparty
   jbuilder
   jquery-rails
   kaminari
@@ -459,14 +429,7 @@ DEPENDENCIES
   mini_magick
   mocha
   mysql2 (~> 0.3.18)
-  omniauth
-  omniauth-facebook
-  omniauth-github
-  omniauth-google-oauth2
-  omniauth-googleplus
-  omniauth-soundcloud
-  omniauth-twitter
-  omniauth-vkontakte
+  oauth2
   pg
   pry-rails
   puma

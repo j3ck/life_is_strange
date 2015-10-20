@@ -9,17 +9,23 @@ gem 'puma'
 gem 'unicorn'
 
 # Auth
+
 # gem 'devise'
 # gem 'devise-i18n'
 # gem 'cancancan'
-gem 'omniauth'
-gem 'omniauth-facebook'
-gem 'omniauth-vkontakte'
-gem 'omniauth-github'
-gem 'omniauth-twitter'
-gem 'omniauth-google-oauth2'
-gem 'omniauth-googleplus'
-gem 'omniauth-soundcloud'
+
+gem 'httparty'
+
+gem 'oauth2'
+
+# gem 'omniauth'
+# gem 'omniauth-facebook'
+# gem 'omniauth-vkontakte'
+# gem 'omniauth-github'
+# gem 'omniauth-twitter'
+# gem 'omniauth-google-oauth2'
+# gem 'omniauth-googleplus'
+# gem 'omniauth-soundcloud'
 
 # Admin Panel
 # gem 'rails_admin', '0.6.5'

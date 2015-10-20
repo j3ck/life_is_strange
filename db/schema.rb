@@ -68,10 +68,10 @@ ActiveRecord::Schema.define(version: 20151019121928) do
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
-    t.string   "provider"
-    t.string   "uid"
+    t.string   "real_name"
+    t.string   "slack_user_id"
     t.string   "photo_url"
-    t.float    "gold"
+    t.float    "gold",             default: 0.0
     t.string   "job",              default: "Свободная касса!"
     t.string   "blog_name",        default: "Измени меня"
     t.string   "blog_desc",        default: " На странице настроек =)"
