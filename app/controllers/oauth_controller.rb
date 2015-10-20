@@ -1,4 +1,6 @@
 class OauthController < ApplicationController
+  # Класс отвечает за создание сессий пользователей на сайте
+
   def authorize
     client = OAuth2::Client.new(SLACK[:client_id],
                                 SLACK[:client_secret],
@@ -24,12 +26,10 @@ class OauthController < ApplicationController
       session[:team] = response.parsed_response["team"]
       session[:user] = response.parsed_response["user"]
 
-
       # Находим пользователя через метод в модели User (или создаём)
-        @user = User.find_or_create(session[:access_token], response.parsed_response["user_id"])
+      @user = User.find_or_create(session[:access_token], response.parsed_response["user_id"])
       # Создаём сессию
-        session[:user_id] = @user.id
-
+      session[:user_id] = @user.id
 
       redirect_to root_url, notice: 'Successfully logged in with Slack!'
     else

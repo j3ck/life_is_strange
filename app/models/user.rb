@@ -31,46 +31,18 @@ class User < ActiveRecord::Base
   # Имеет множество сообщений на фоорумах
   has_many :messages
 
-  # Мы либо находим пользователя в базе по данным :provider и :uid,
+  # Мы либо находим пользователя в базе по данным :slack_user_id
   # либо создаём (через метод first_or_create) и тут же обновляем
   # Потом отдаём то что получилось
 
-  # def self.find_or_create_from_auth_hash(auth_hash)
-  #   user = where(provider: auth_hash[:provider], uid: auth_hash[:uid]).first_or_create
-  #
-  #     if auth_hash[:provider] == 'googleplus'
-  #       user.update(name: auth_hash[:info][:name])
-  #     end
-  #
-  #     if auth_hash[:provider] == 'vkontakte'
-  #       user.update(name: auth_hash[:info][:name])
-  #     end
-  #
-  #     if auth_hash[:provider] == 'facebook'
-  #       user.update(name: auth_hash[:info][:name])
-  #     end
-  #
-  #     if auth_hash[:provider] == 'github'
-  #       user.update(name: auth_hash[:info][:name])
-  #     end
-  #
-  #     if auth_hash[:provider] == 'soundcloud'
-  #       user.update(name: auth_hash[:info][:name])
-  #     end
-  #
-  #     if auth_hash[:provider] == 'twitter'
-  #       user.update(name: auth_hash[:info][:nickname], photo_url: auth_hash[:info][:image])
-  #     end
-  #   user
-  # end
-
   def self.find_or_create(token, user_id)
+
+    # Получение данных с сервиса Slack
     options = { query: { token: token, user: user_id} }
     request = HTTParty.post("https://slack.com/api/users.info", options)
     request.to_json
 
-    # raise request.inspect
-
+    # Создание пользователя в системе (или обновление)
     user = where(slack_user_id: request.parsed_response['user']['id']).first_or_create
     user.update(
       slack_user_id: request.parsed_response['user']['id'],
