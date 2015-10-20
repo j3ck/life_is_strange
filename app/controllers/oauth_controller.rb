@@ -10,8 +10,7 @@ class OauthController < ApplicationController
 
   def deauthorize
     session[:access_token] = nil
-    session[:team] = nil
-    session[:user] = nil
+    session[:user_id] = nil
     redirect_to root_url, notice: 'You have logged out of Slack.'
   end
 
@@ -21,13 +20,11 @@ class OauthController < ApplicationController
                                   SLACK[:client_secret],
                                   site: SLACK[:authorize_uri],
                                   token_url: SLACK[:token_uri])
-      session[:access_token] = client.auth_code.get_token(params[:code], redirect_uri: SLACK[:redirect_uri]).token
-      response = HTTParty.get('https://slack.com/api/auth.test', query: { token: session[:access_token] })
-      session[:team] = response.parsed_response["team"]
-      session[:user] = response.parsed_response["user"]
+      token = client.auth_code.get_token(params[:code], redirect_uri: SLACK[:redirect_uri]).token
+      response = HTTParty.get('https://slack.com/api/auth.test', query: { token: token })
 
       # Находим пользователя через метод в модели User (или создаём)
-      @user = User.find_or_create(session[:access_token], response.parsed_response["user_id"])
+      @user = User.find_or_create(token, response.parsed_response["user_id"])
       # Создаём сессию
       session[:user_id] = @user.id
 
