@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'main#dashboard'
+  root 'users#index'
 
   # Авторизация через Slack
   get 'oauth/authorize', as: :authorize
