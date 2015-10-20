@@ -12,9 +12,9 @@ main#main-container style="min-height: 231px;"
           / a class="btn btn-rounded btn-noborder btn-lg btn-primary animated bounceIn" data-toggle="modal" data-class="animated bounceIn" data-timeout="800" data-target="#login"
 
           - if session[:access_token].nil?
-            = link_to 'Login with Slack', authorize_path, class: 'btn btn-rounded btn-noborder btn-lg btn-primary animated bounceIn'
+            = link_to 'Присоединиться', authorize_path, class: 'btn btn-rounded btn-noborder btn-lg btn-primary animated bounceIn'
           - else
-            = link_to 'Log Out of Slack', deauthorize_path, class: 'btn btn-rounded btn-noborder btn-lg btn-warning animated bounceIn'
+            = link_to 'Выйти', deauthorize_path, class: 'btn btn-rounded btn-noborder btn-lg btn-warning animated bounceIn'
 
             / | Присоединиться
         div.row.animated.fadeInUp data-toggle="appear" data-class="animated fadeInUp"
