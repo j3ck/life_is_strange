@@ -21,17 +21,18 @@
 
 ##### Регистрация и авторизация
 
-Авторизация в приложении происходит исключительно через социальные сети. На данный момент на 100% реализована только регистрация/авторизация через **Twitter**
+Авторизация в приложении происходит исключительно через [Slack](https://slack.com/)
 
-Для того чтобы авторизоваться через **Twitter** вам понадобится собственное [**twitter-приложение**](https://apps.twitter.com), в настройках которого вы найдёте параметры **TWITTER_KEY** и **TWITTER_SECRET**
+Для того чтобы авторизоваться через **Slack** (во время локальной разработки) вам понадобится собственное [**Slack-приложение**](https://api.slack.com/applications), в настройках которого вы найдёте параметры **SLACK_CLIENT_ID**, **SLACK_CLIENT_SECRET** и **SLACK_REDIRECT_URI**
 
 Их необходимо вставить в новый файл **.env** (в корне приложения) в следующем формате:
 
 ```
-TWITTER_KEY=svJKNHjknJLNKnj
-TWITTER_SECRET=JnpujnKJUNPunhjbbyYYvYVFGOTFjYFUTY
+SLACK_CLIENT_ID=2345324553.5489484567547
+SLACK_CLIENT_SECRET=JnpujnKJUNPunhjbbyYYvYVFGOTFjYFUTY
+SLACK_REDIRECT_URI=http://lvh.me:8080/oauth/request_access_token (этот параметр изменять не нужно)
 ```
-Это позволит приложению авторизовать вас через инициализатор -  [omniauth.rb](https://github.com/riley-usagi/life_is_strange/blob/master/config/initializers/omniauth.rb)
+Это позволит приложению авторизовать вас через инициализатор -  [slack.rb](https://github.com/riley-usagi/life_is_strange/blob/master/config/initializers/slack.rb)
 
 ##### Работа с поддоменами
 
