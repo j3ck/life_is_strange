@@ -29,7 +29,8 @@ Rails.application.routes.draw do
   # Страница конкретной темы
   get '/forum/theme/:title', to: 'forum#theme', as: :theme
 
-
+  # Контакты
+  match '/contacts', to: 'main#contacts', via: :all
 
   # 404, используется как входящая страница для всех ссылок из социальных сетей с :UID
   # get '*a', to: redirect('/')

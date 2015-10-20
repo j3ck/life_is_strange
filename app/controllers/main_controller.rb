@@ -1,6 +1,6 @@
 class MainController < ApplicationController
 
-  before_action :auth, except: [:login]
+  before_action :auth, except: [:login, :contacts]
 
   def login
   end
@@ -25,6 +25,10 @@ class MainController < ApplicationController
     #   all_gym_issues = gym_milestone.open_issues + gym_milestone.closed_issues
     #   @gym_done = (gym_milestone.closed_issues.to_f / (all_gym_issues.to_f / 100)).round.inspect
 
+
+  end
+
+  def contacts
 
   end
 

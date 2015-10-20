@@ -1,0 +1,46 @@
+main#main-container style="min-height: 269px;"
+  div.bg-primary-dark
+    section.content.content-full.content-boxed
+      div.push-100-t.push-50.text-center
+        h1.h2.text-white.push-10.animated.fadeInDown data-toggle="appear" data-class="animated fadeInDown"
+          | Свяжитесь с нами
+        h2.h5.text-white-op.animated.fadeInDown data-toggle="appear" data-class="animated fadeInDown"
+          | Есть идеи или предложения? Напишите о них нам!
+
+  / Секция с формой
+  div.bg-white
+    section.content.content-boxed
+      div.row.items-push.push-50-t.push-30
+        div.col-md-6.col-md-offset-3
+          form.form-horizontal action="frontend_contact.php" method="post"
+
+            / Имя
+            div.form-group
+              div.col-xs-12
+                div.form-material.form-material-primary
+                  input.form-control type="text" placeholder="Представьтесь.."
+                  label for="frontend-contact-firstname"
+                    | Ваше имя
+
+            / Email
+            div.form-group
+              div.col-xs-12
+                div.form-material.form-material-primary
+                  input.form-control type="email" placeholder="Ваш адрес.."
+                  label for="frontend-contact-email"
+                    | Email
+
+            / Сообщение
+            div.form-group
+              div.col-xs-12
+                div.form-material.form-material-primary
+                  textarea.form-control rows="7" placeholder="Текст сообщения.."
+                  label for="frontend-contact-msg"
+                    | Сообщение
+
+            / Кнопка для отправки
+            div.form-group
+              div.col-xs-12.col-sm-6.col-sm-offset-3
+                button.btn.btn-block.btn-primary type="submit"
+                  i.fa.fa-send.pull-left
+                  = " Отправить"
