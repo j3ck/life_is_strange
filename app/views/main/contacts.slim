@@ -1,4 +1,15 @@
 main#main-container style="min-height: 269px;"
+
+  / Сообщение об ошибке валидации
+  - if flash[:error]
+    div.content
+      div.row
+        div.col-sm-12.col-lg-12
+          div.alert.alert-warning
+            h3.font-w300.push-15 Ошибка:
+            p
+              = flash[:error]
+
   div.bg-primary-dark
     section.content.content-full.content-boxed
       div.push-100-t.push-50.text-center
@@ -12,13 +23,13 @@ main#main-container style="min-height: 269px;"
     section.content.content-boxed
       div.row.items-push.push-50-t.push-30
         div.col-md-6.col-md-offset-3
-          form.form-horizontal action="frontend_contact.php" method="post"
+          = simple_form_for :support_message, url: {action: "contacts"}, html: {class: 'form-horizontal' } do |f|
 
             / Имя
             div.form-group
               div.col-xs-12
                 div.form-material.form-material-primary
-                  input.form-control type="text" placeholder="Представьтесь.."
+                  = f.input_field :name, class: 'form-control', placeholder: 'Представьтесь..'
                   label for="frontend-contact-firstname"
                     | Ваше имя
 
@@ -26,7 +37,7 @@ main#main-container style="min-height: 269px;"
             div.form-group
               div.col-xs-12
                 div.form-material.form-material-primary
-                  input.form-control type="email" placeholder="Ваш адрес.."
+                  = f.input_field :email, class: 'form-control', placeholder: 'Ваш адрес..'
                   label for="frontend-contact-email"
                     | Email
 
@@ -34,7 +45,7 @@ main#main-container style="min-height: 269px;"
             div.form-group
               div.col-xs-12
                 div.form-material.form-material-primary
-                  textarea.form-control rows="7" placeholder="Текст сообщения.."
+                  = f.input_field :message, as: :text, rows: 7, class: 'form-control', placeholder: 'Текст сообщения..'
                   label for="frontend-contact-msg"
                     | Сообщение
 
