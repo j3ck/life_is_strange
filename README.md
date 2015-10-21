@@ -1,3 +1,5 @@
+[![Slack Status](https://slack.lifeisstrange.com/badge.svg)](https://lifeisstrange.com)
+
 # Life is Strange
 ## Портал сообщества начинающих трансгуманистов, имморталистов и прочих сингуляров
 
