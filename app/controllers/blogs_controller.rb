@@ -1,7 +1,7 @@
 class BlogsController < ApplicationController
 
   before_action :auth
-  before_action :article, only: [:show, :edit]
+  before_action :article, only: [:show, :edit, :update]
   before_action :user, only: [:index, :show]
 
   # Страница со всеми записями всех блогов
@@ -42,14 +42,18 @@ class BlogsController < ApplicationController
 
   # Процесс обновления статьи
   def update
+    post = @article.update(post_params)
+    redirect_to(blogs_url(subdomain: current_user.name))
   end
 
   private
 
+    # Ищем текущую запись в блогах
     def article
       @article = Article.friendly.find(params[:id])
     end
 
+    # Rails Strong parameters
     def post_params
       params.require(:blog_article).permit(:user_id, :title, :desc, :content, :image)
     end

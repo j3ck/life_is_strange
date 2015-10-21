@@ -17,7 +17,7 @@ main#main-container style="min-height: 465px;"
               = " Изменение записи"
 
           div.block-content
-            = simple_form_for :blog_article, url: {action: "update"}, html: {class: 'form-horizontal push-10-t push-10' } do |f|
+            = simple_form_for :blog_article, url: {action: "update"}, html: {class: 'form-horizontal push-10-t push-10' }, method: 'put' do |f|
               / Название записи
               div.form-group
                 div.col-xs-12
