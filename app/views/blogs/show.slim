@@ -29,6 +29,7 @@ main#main-container style="min-height: 269px;"
             = markdown(@article.content)
           / Todo: необходим функционал для кнопки "Нравится"
           div.push-50-t.clearfix
-            a.btn.btn-success href="javascript:void(0)"
+            a.btn.btn-success.push-5-r.push-10 href="javascript:void(0)"
               i.fa.fa-heart.push-5-r
               | Понравилось
+            = link_to 'Изменить', edit_blog_path(@article), class: 'btn btn-warning push-5-r push-10'

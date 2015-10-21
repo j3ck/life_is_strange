@@ -1,6 +1,7 @@
 class BlogsController < ApplicationController
 
   before_action :auth
+  before_action :article, only: [:show, :edit]
   before_action :user, only: [:index, :show]
 
   # Страница со всеми записями всех блогов
@@ -17,7 +18,6 @@ class BlogsController < ApplicationController
 
   # Страница конкретной записи
   def show
-    @article = Article.friendly.find(params[:id])
   end
 
   # Форма создания статьи в блоге
@@ -45,6 +45,10 @@ class BlogsController < ApplicationController
   end
 
   private
+
+    def article
+      @article = Article.friendly.find(params[:id])
+    end
 
     def post_params
       params.require(:blog_article).permit(:user_id, :title, :desc, :content, :image)

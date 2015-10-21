@@ -1,0 +1,60 @@
+main#main-container style="min-height: 465px;"
+  div.content
+    div.row
+      - if flash[:error]
+        div.col-sm-12.col-lg-12
+          div.alert.alert-warning
+            h3.font-w300.push-15 Ошибка:
+            p
+              = flash[:error]
+
+      div.col-sm-12.col-lg-12
+
+        div.block.remove-margin-b
+          div.block-header.bg-gray-lighter
+            h3.block-title
+              i.si.si-pencil
+              = " Изменение записи"
+
+          div.block-content
+            = simple_form_for :blog_article, url: {action: "update"}, html: {class: 'form-horizontal push-10-t push-10' } do |f|
+              / Название записи
+              div.form-group
+                div.col-xs-12
+                  div.form-material.floating.input-group
+                    = f.input_field :title, class: 'form-control', value: @article.title
+                    span.input-group-addon
+                      i.si.si-book-open
+
+              / Описание записи
+              div.form-group
+                div.col-xs-12
+                  div.form-material.floating.input-group
+                    = f.input_field :desc, class: 'form-control', value: @article.desc
+                    span.input-group-addon
+                      i.si.si-book-open
+
+              / Сама запись
+              div.form-group
+                div.col-xs-12
+                  div.form-material.floating
+                    = f.input_field :content, as: :text, rows: 6, class: 'form-control', value: @article.content
+
+                  div.help-block.text-right
+                    | Поддерживается формат текста
+                    = link_to " Markdown", 'https://help.github.com/articles/github-flavored-markdown/'
+
+              div.form-group
+                div.col-xs-12
+                  div.form-material
+                    label.col-xs-12
+                      | Изображение
+                    = f.input_field :image, as: :file
+
+                    = f.hidden_field :user_id, value: current_user.id
+              / Кнопка отправки сообщения в базу
+              div.form-group
+                div.col-xs-12
+                  button.btn.btn-sm.btn-default type="submit"
+                    i.fa.fa-send.push-5-r
+                      = " Сохранить"
