@@ -33,3 +33,4 @@ main#main-container style="min-height: 269px;"
               i.fa.fa-heart.push-5-r
               | Понравилось
             = link_to 'Изменить', edit_blog_path(@article), class: 'btn btn-warning push-5-r push-10'
+            = button_to 'Удалить', blog_path(@article), class: 'btn btn-danger push-5-r push-10', method: :delete, data: { confirm: "Вы уверены?" }

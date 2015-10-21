@@ -1,7 +1,7 @@
 class BlogsController < ApplicationController
 
   before_action :auth
-  before_action :article, only: [:show, :edit, :update]
+  before_action :article, only: [:show, :edit, :update, :destroy]
   before_action :user, only: [:index, :show]
 
   # Страница со всеми записями всех блогов
@@ -45,6 +45,12 @@ class BlogsController < ApplicationController
     post = @article.update(post_params)
     redirect_to(blogs_url(subdomain: current_user.name))
   end
+
+  def destroy
+    @article.destroy
+    redirect_to(blogs_url(subdomain: current_user.name))
+  end
+
 
   private
 
