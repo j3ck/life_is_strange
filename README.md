@@ -5,10 +5,6 @@
 
 ---
 
-### [Дорожная карта проекта](https://github.com/riley-usagi/life_is_strange/blob/master/docs/roadmap.md)
-
----
-
 ### [Открытые задачи](https://github.com/riley-usagi/life_is_strange/issues)
 
 ---
