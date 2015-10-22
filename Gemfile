@@ -12,7 +12,7 @@ gem 'unicorn'
 
 # gem 'devise'
 # gem 'devise-i18n'
-# gem 'cancancan'
+gem 'cancancan'
 
 gem 'httparty'
 

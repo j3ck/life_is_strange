@@ -56,6 +56,7 @@ GEM
       rails (>= 3.1)
     builder (3.2.2)
     callsite (0.0.11)
+    cancancan (1.13.1)
     capistrano (3.3.5)
       capistrano-stats (~> 1.1.0)
       i18n
@@ -405,6 +406,7 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   bootstrap-kaminari-views
+  cancancan
   capistrano (~> 3.3.5)
   capistrano-rails (~> 1.1.2)
   capistrano-rvm
