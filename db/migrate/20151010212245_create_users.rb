@@ -1,6 +1,7 @@
 class CreateUsers < ActiveRecord::Migration
   def change
     create_table :users do |t|
+      t.string :role, default: 'user'
       t.string :name
       t.string :real_name
       t.string :slack_user_id

@@ -3,6 +3,7 @@
 # Table name: users
 #
 #  id               :integer          not null, primary key
+#  role             :string           default("user")
 #  name             :string
 #  real_name        :string
 #  slack_user_id    :string
@@ -18,6 +19,17 @@
 #
 
 class User < ActiveRecord::Base
+
+  # Список ролей для CanCan'a
+  ROLES = %w[user admin]
+
+  # Проверка на наличие пользователей.
+  # Если ты первый, то удача повернулась к тебе лицом и ты становишься админом!! Та-да!
+  before_create do
+    if User.first.nil?
+      self.role = 'admin'
+    end
+  end
 
   # Имеет множество записей в блоге
   has_many :articles

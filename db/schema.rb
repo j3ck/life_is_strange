@@ -75,6 +75,7 @@ ActiveRecord::Schema.define(version: 20151020135117) do
   end
 
   create_table "users", force: :cascade do |t|
+    t.string   "role",             default: "user"
     t.string   "name"
     t.string   "real_name"
     t.string   "slack_user_id"
