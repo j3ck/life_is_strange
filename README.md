@@ -24,8 +24,8 @@
 Их необходимо вставить в новый файл **.env** (в корне приложения) в следующем формате:
 
 ```
-SLACK_CLIENT_ID=2345324553.5489484567547
-SLACK_CLIENT_SECRET=JnpujnKJUNPunhjbbyYYvYVFGOTFjYFUTY
+SLACK_CLIENT_ID=2345324553.5489484567547 # Данные для примера.
+SLACK_CLIENT_SECRET=JnpujnKJUNPunhjbbyYYvYVFGOTFjYFUTY # Нужно подставлять данные из своего приложения.
 SLACK_REDIRECT_URI=http://lvh.me:8080/oauth/request_access_token (этот параметр изменять не нужно)
 ```
 Это позволит приложению авторизовать вас через инициализатор -  [slack.rb](https://github.com/riley-usagi/life_is_strange/blob/master/config/initializers/slack.rb)
