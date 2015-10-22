@@ -32,6 +32,13 @@ Rails.application.routes.draw do
   # Контакты
   match '/contacts', to: 'main#contacts', via: :all
 
+  # Административная панель
+  namespace :admin do
+    resources :blogs
+  end
+
+
+
   # 404, используется как входящая страница для всех ссылок из социальных сетей с :UID
   # get '*a', to: redirect('/')
 
