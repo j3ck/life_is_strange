@@ -1,8 +1,8 @@
 # Life is Strange
 ## Портал сообщества начинающих трансгуманистов, имморталистов и прочих сингуляров
 
-[![Code Climate](https://codeclimate.com/github/riley-usagi/life_is_strange/badges/gpa.svg)](https://codeclimate.com/github/riley-usagi/life_is_strange)
-[![Test Coverage](https://codeclimate.com/github/riley-usagi/life_is_strange/badges/coverage.svg)](https://codeclimate.com/github/riley-usagi/life_is_strange/coverage)
+[![Code Climate](https://codeclimate.com/github/life-is-strange/life_is_strange/badges/gpa.svg)](https://codeclimate.com/github/life-is-strange/life_is_strange)
+[![Test Coverage](https://codeclimate.com/github/life-is-strange/life_is_strange/badges/coverage.svg)](https://codeclimate.com/github/life-is-strange/life_is_strange/coverage)
 
 ![Life Is Strange, сообщество трансгуманистов](https://raw.githubusercontent.com/riley-usagi/life_is_strange/master/docs/readme_promo_1.png)
 
